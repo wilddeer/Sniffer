@@ -199,7 +199,8 @@ var Sniffer = {
 				}
 			},
 			features: {
-				mobile: true
+				mobile: true,
+				serverside: true
 			}
 		},
 		// Opera Mini Webkit - future proof
