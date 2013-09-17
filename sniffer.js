@@ -21,6 +21,7 @@ var Sniffer = {
 		/*
 		bw
 		mobile
+		serverside
 		*/
 	},
 	things: [
