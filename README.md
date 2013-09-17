@@ -15,7 +15,7 @@ I feature-detect like a boss. But when I can't, I use this shit to help me out.
 
 Put it in your `<head>`, where you keep your Modernizr.
 
-Now you have this beautifull object in your global scope:
+Now you have this beautiful object in your global scope:
 
 	Sniffer = {
 		browser: {
