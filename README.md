@@ -13,7 +13,7 @@ I feature-detect like a boss. But when I can't, I use this shit to help me out.
 
 ##Use it
 
-Put it in your `<head>`, somewhere where you keep your Modernizr.
+Put it in your `<head>`, where you keep your Modernizr.
 
 Now you have this beautifull object in your global scope:
 
@@ -28,10 +28,52 @@ Now you have this beautifull object in your global scope:
 			version
 		},
 		features: {
-			bw: true/undefined,
+			bw: true/undefined, /* black-and-white */
 			mobile: true/undefined,
-			serverside: true/undefined
+			serverside: true/undefined /* serverside js & rendering, a-la Opera Mini */
 		}
 	}
 	
-You also have some fancy classes in your `HTML` tag: one for browser name, one for browser engine, one for os name and one for every feature that appears to be true.
+You also have some fancy classes in your `HTML` tag: one for browser name, one for browser engine, one for OS name and one for each feature that appears to be true.
+
+##Detects
+
+**Browsers:**
+
+- **Chrome** *[chrome]*
+- **Firefox** *[firefox]*
+- **IE** *[ie]*
+- **Opera** *[opera]*
+- **Opera Mini** *[operamini]*
+- **Nokia Browser** *\[nokiabrowser\]* (!= Nokia Xpress) — Symbian Belle phones
+- **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 & Series60 phones
+
+No Safari, 'cause there is no reliable way to detect it. No, srsly. If you desperately want Safari test, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
+
+**Engines:**
+
+- *webkit*
+- *gecko*
+- *trident*
+- *presto*
+
+**OS/Device:**
+
+- **Windows** *[win]*
+- **Mac** *[mac]*
+- **Windows Phone** *[winphone]*
+- **Android** *[android]*
+- **iOS** *[ios]*
+- **Blackberry** *[blackberry]*
+- **Symbian** *[symbian]*
+- **Kindle** *\[kindle\]* (Kindle Fire should be detected as Android)
+- **Linux** *[linux]* — actually anything linux-based not from the list above
+
+**Features:**
+
+- **Black and white** *[bw]*
+- **Mobile** *[mobile]*
+- **Serverside rendering** *[serverside]*
+
+
+Have fun lads
