@@ -56,7 +56,7 @@ var Sniffer = {
 			var test = true;
 
 			for (var j=0; j<data[i].test.length; j++) {
-				if (!data[i].test[j].string || !data[i].test[j].search || data[i].test[j].string.indexOf(data[i].test[j].search) == -1) {
+				if (!data[i].test[j].string || !data[i].test[j].search || data[i].test[j].string.toLowerCase().indexOf(data[i].test[j].search.toLowerCase()) == -1) {
 					if (data[i].test[j].prop === undefined) {
 						test = false;
 						break;
@@ -223,30 +223,6 @@ var Sniffer = {
 			features: {
 				mobile: true,
 				serverside: true
-			}
-		},
-		// Nintendo Browser
-		{
-			test: [
-				{
-					string: navigator.userAgent,
-					search: 'Opera'
-				},
-				{
-					string: navigator.userAgent,
-					search: 'Nintendo'
-				}
-			],
-			browser: {
-				name: 'nintendobrowser',
-				engine: 'presto',
-				version: {
-					string: navigator.userAgent,
-					search: 'Opera/'
-				}
-			},
-			features: {
-				mobile: true
 			}
 		},
 		// Opera
@@ -464,6 +440,24 @@ var Sniffer = {
 				mobile: true
 			}
 		},
+		// Nintendo 3DS
+		{
+			test: [
+				{
+					string: navigator.userAgent,
+					search: 'Nintendo 3DS'
+				}
+			],
+			os: {
+				name: '3ds'
+			},
+			browser: {
+				engine: 'webkit'
+			},
+			features: {
+				mobile: true
+			}
+		},
 		// something linux-based, could be anything
 		{
 			test: [
@@ -483,17 +477,6 @@ var Sniffer = {
 				{
 					string: navigator.userAgent,
 					search: 'mobile'
-				}
-			],
-			features: {
-				mobile: true
-			}
-		},
-		{
-			test: [
-				{
-					string: navigator.userAgent,
-					search: 'Mobile'
 				}
 			],
 			features: {

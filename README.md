@@ -68,6 +68,7 @@ No Safari, 'cause there is no reliable way to detect it. No, srsly. If you despe
 - **Symbian** *[symbian]*
 - **Kindle** *\[kindle\]* (Kindle Fire should be detected as Android)
 - **Nintendo DSi** *[dsi]*
+- **Nintendo 3DS** *[3ds]*
 - **Linux** *[linux]* — actually anything linux-based not from the list above
 
 **Features:**
