@@ -1,7 +1,7 @@
 Sniffer
 =======
 
-'cause when u can't detect it, u should sniff it!
+'cause if u can't detect it, u should sniff it!
 
 ##Why u no feature-detect??/?////
 
