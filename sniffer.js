@@ -1,6 +1,8 @@
 /*
-	puper duper sniffer
-	copyright dizaina.net
+	Puper Duper Sniffer
+	Copyright dizaina.net
+
+	MIT License
 */
 
 var Sniffer = {
