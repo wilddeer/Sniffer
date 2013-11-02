@@ -20,11 +20,9 @@ var Sniffer = {
 		*/
 	},
 	features: {
-		/*
-		bw
-		mobile
-		serverside
-		*/
+		bw: false,
+		mobile: false,
+		serverside: false
 	},
 	things: [
 		'browser',
@@ -47,7 +45,7 @@ var Sniffer = {
 		this.os.name && className.push(this.os.name);
 
 		for (var prop in this.features) {
-			className.push(prop);
+			if (this.features[prop]) className.push(prop);
 		}
 
 		tag.className = className.join(' ');

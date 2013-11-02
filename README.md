@@ -1,7 +1,7 @@
 Sniffer
 =======
 
-'cause when u can't detect it, u should sniff it!
+'cause if u can't detect it, u should sniff it!
 
 ##Why u no feature-detect??/?////
 
@@ -28,9 +28,9 @@ Now you have this beautiful object in your global scope:
 			version
 		},
 		features: {
-			bw: true/undefined, /* black-and-white */
-			mobile: true/undefined,
-			serverside: true/undefined /* serverside js & rendering, a-la Opera Mini */
+			bw: bool, /* black-and-white */
+			mobile: bool,
+			serverside: bool /* serverside js & rendering, a-la Opera Mini */
 		}
 	}
 	
@@ -76,6 +76,5 @@ No Safari, 'cause there is no reliable way to detect it. No, srsly. If you despe
 - **Black and white** *[bw]*
 - **Mobile** *[mobile]*
 - **Serverside rendering** *[serverside]*
-
 
 Have fun lads
