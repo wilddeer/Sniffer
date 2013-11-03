@@ -7,7 +7,7 @@ Sniffer
 
 I feature-detect like a boss. But when I can't, I use this shit to help me out.
 
-- You cant reliably detect `overflow: scroll` behavior on mobile devices. And lot's of other stuff. Use da Sniffer!
+- You can't reliably detect `overflow: scroll` behavior on mobile devices. And lot's of other stuff. Use da Sniffer!
 - You have to sniff [false-positives](https://docs.google.com/spreadsheet/ccc?key=0AjA1cIs8C8MGdFdyQ0lMQnhMbHJEeVZpMW9XejhzU2c&usp=sharing) (some of my shitty tests there).
 - You want to support those two idiots coming to your site from Kindle? I do! Make'em happy with contrast colors and disabled animations.
 
