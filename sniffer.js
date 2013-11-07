@@ -108,6 +108,23 @@ var Sniffer = {
 				}
 			}
 		},
+		// IE 11+
+		{
+			test: [
+				{
+					string: navigator.userAgent,
+					search: 'Trident'
+				}
+			],
+			browser: {
+				name: 'ie',
+				engine: 'trident',
+				version: {
+					string: navigator.userAgent,
+					search: 'rv:'
+				}
+			}
+		},
 		// Opera 15+
 		{
 			test: [
