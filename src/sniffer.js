@@ -1,10 +1,3 @@
-/*!
- * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 1.0.0 | https://github.com/wilddeer/Sniffer
- * Copyright Oleg Korsunsky | http://wd.dizaina.net/
- *
- * MIT License
- */
 window.Sniffer = (function(ua, platform) {
 	var tag = document.getElementsByTagName('html')[0],
 		Sniffer = {
