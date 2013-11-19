@@ -19,7 +19,7 @@ I feature-detect like a boss. But when I can't, I use dirty hacks to help me out
 
 ##Use it
 
-Put it in your `<head>`, where you keep your [Modernizr](//modernizr.com) (Modernizr is not required, but you do use it, right?).
+Put it in your `<head>`, where you keep your [Modernizr](http://modernizr.com) (Modernizr is not required, but you do use it, right?).
 
 Now you have this beautiful object in your global scope:
 
