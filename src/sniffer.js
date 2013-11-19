@@ -199,6 +199,7 @@ window.Sniffer = (function(ua, platform) {
 					],
 					browser: {
 						name: 'ovi',
+						engine: 'gecko',
 						version: {
 							string: ua,
 							search: 'OviBrowser/'
