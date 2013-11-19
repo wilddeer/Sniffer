@@ -206,6 +206,7 @@ window.Sniffer = (function(ua, platform) {
 					],
 					browser: {
 						name: 'ovi',
+						engine: 'gecko',
 						version: {
 							string: ua,
 							search: 'OviBrowser/'
@@ -380,6 +381,21 @@ window.Sniffer = (function(ua, platform) {
 						mobile: true
 					}
 				},
+				// PS Vita
+				{
+					test: [
+						{
+							string: ua,
+							search: 'PlayStation Vita'
+						}
+					],
+					os: {
+						name: 'psvita'
+					},
+					features: {
+						mobile: true
+					}
+				},
 				// Nintendo DSi
 				{
 					test: [
@@ -506,4 +522,4 @@ window.Sniffer = (function(ua, platform) {
 	init();
 
 	return Sniffer;
-})(navigator.userAgent, navigator.platform);
+})(window.navigator.userAgent, window.navigator.platform);
