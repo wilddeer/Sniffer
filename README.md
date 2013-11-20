@@ -10,7 +10,7 @@ I feature-detect like a boss. But when I can't, I use dirty hacks to help me out
 
 - Some features are just undetectable. For instance, `overflow: scroll` behavior on mobile devices is one of them. Use da Sniffer!
 - You have to sniff [false-positives & false-negatives](https://docs.google.com/spreadsheet/ccc?key=0AjA1cIs8C8MGdFdyQ0lMQnhMbHJEeVZpMW9XejhzU2c&usp=sharing) (some of my mobile browsers tests there).
-- You want to support those two idiots coming to your site from Kindle? I do! Make'em happy with contrast colors and disabled animations.
+- You want to support those two idiots coming to your site from Kindle? I do! Make 'em happy with contrasting colors and disabled animations.
 
 ##Get it
 
@@ -55,7 +55,7 @@ You also have some fancy classes in your `HTML` tag: one for browser name, one f
 
 ##Detects
 
-Class/property name in square brackets.
+Class/property names in square brackets.
 
 **Browsers:**
 
@@ -67,7 +67,7 @@ Class/property name in square brackets.
 - **Nokia Browser** *\[nokiabrowser\]* (!= Nokia Xpress) — Symbian Belle phones
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 & Series60 phones
 
-No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want Safari test, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
+No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want Safari tested, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
 
 **Engines:**
 
@@ -97,4 +97,4 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 - **Mobile** *[mobile]*
 - **Serverside rendering** *[serverside]*
 
-Have fun lads.
+Have fun, lads.
