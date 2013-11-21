@@ -68,7 +68,7 @@ Class/property names in square brackets.
 - **IE** *[ie]*
 - **Opera** *[opera]*
 - **Opera Mini** *[operamini]*
-- **Nokia Browser** *[nokiabrowser]*(!= Nokia Xpress) — Symbian Belle phones
+- **Nokia Browser** *[nokiabrowser]* (!= Nokia Xpress) — Symbian Belle phones
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
 
 No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want a Safari test, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
@@ -103,6 +103,6 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 
 ##License
 
-[MIT license](http://opensource.org/licenses/MIT)
+[MIT license](http://opensource.org/licenses/MIT).
 
 Have fun, lads.

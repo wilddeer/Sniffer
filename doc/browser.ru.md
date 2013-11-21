@@ -3,5 +3,5 @@
 - **IE** *[ie]*
 - **Opera** *[opera]*
 - **Opera Mini** *[operamini]*
-- **Nokia Browser** *[nokiabrowser]*(!= Nokia Xpress) — мобилки на Symbian Belle
+- **Nokia Browser** *[nokiabrowser]* (!= Nokia Xpress) — мобилки на Symbian Belle
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, мобилки на Series40 и Series60 и другие

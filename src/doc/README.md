@@ -67,6 +67,6 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 
 ##License
 
-[MIT license](http://opensource.org/licenses/MIT)
+[MIT license](http://opensource.org/licenses/MIT).
 
 Have fun, lads.
