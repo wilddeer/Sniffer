@@ -1,0 +1,12 @@
+- **Windows** *[win]*
+- **Mac** *[mac]*
+- **Windows Phone** *[winphone]*
+- **Android** *[android]*
+- **iOS** *[ios]*
+- **Blackberry** *[blackberry]*
+- **Symbian** *[symbian]*
+- **Kindle** *[kindle]* (Kindle Fire should be detected as Android)
+- **PlayStation Vita** *[psvita]*
+- **Nintendo DSi** *[dsi]*
+- **Nintendo 3DS** *[3ds]*
+- **Linux** *[linux]* — actually anything linux-based not from the list above

@@ -24,37 +24,15 @@ Put it in your `<head>`, where you keep your [Modernizr](http://modernizr.com) (
 Now you have this beautiful object in your global scope:
 
 ````
-Sniffer = {
-	browser: {
-		name,
-		engine,
-		version
-	},
-	os: {
-		name,
-		version
-	},
-	features: {
-		bw: bool, /* black and white (e-book readers) */
-		mobile: bool,
-		serverside: bool /* serverside js & rendering, like in Opera Mini */
-	}
-}
+{{> sniffer.object }}
+
 ````
 	
 You also have some fancy classes in your `HTML` tag: one for browser name, one for browser engine, one for OS name and one for each feature that appears to be true. Use them to vary the styles:
 
 ````
-html.bw body {
-	color: black;
-	background: white;
-}
+{{> sniffer.css.example }}
 
-/* fu ovi! */
-html.ovi body {
-	color: red;
-	background: green;
-}
 ````
 
 ##Detects
@@ -63,43 +41,29 @@ Class/property names in square brackets.
 
 **Browsers:**
 
-- **Chrome** *[chrome]*
-- **Firefox** *[firefox]*
-- **IE** *[ie]*
-- **Opera** *[opera]*
-- **Opera Mini** *[operamini]*
-- **Nokia Browser** *[nokiabrowser]*(!= Nokia Xpress) — Symbian Belle phones
-- **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
+{{#browser}}
+- **{{name}}** *[{{prop}}]*{{comment.en}}
+{{/browser}}
 
 No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want a Safari test, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
 
 **Engines:**
 
-- **WebKit** *[webkit]*
-- **Gecko** *[gecko]*
-- **Trident** *[trident]*
-- **Presto** *[presto]*
+{{#engine}}
+- **{{name}}** *[{{prop}}]*{{comment.en}}
+{{/engine}}
 
 **OS/Device:**
 
-- **Windows** *[win]*
-- **Mac** *[mac]*
-- **Windows Phone** *[winphone]*
-- **Android** *[android]*
-- **iOS** *[ios]*
-- **Blackberry** *[blackberry]*
-- **Symbian** *[symbian]*
-- **Kindle** *[kindle]* (Kindle Fire should be detected as Android)
-- **PlayStation Vita** *[psvita]*
-- **Nintendo DSi** *[dsi]*
-- **Nintendo 3DS** *[3ds]*
-- **Linux** *[linux]* — actually anything linux-based not from the list above
+{{#os}}
+- **{{name}}** *[{{prop}}]*{{comment.en}}
+{{/os}}
 
 **Features:**
 
-- **Black and white** *[bw]*
-- **Mobile** *[mobile]*
-- **Serverside rendering** *[serverside]*
+{{#feature}}
+- **{{name}}** *[{{prop}}]*{{comment.en}}
+{{/feature}}
 
 ##License
 

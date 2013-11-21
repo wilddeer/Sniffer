@@ -1,0 +1,12 @@
+- **Windows** *[win]*
+- **Mac** *[mac]*
+- **Windows Phone** *[winphone]*
+- **Android** *[android]*
+- **iOS** *[ios]*
+- **Blackberry** *[blackberry]*
+- **Symbian** *[symbian]*
+- **Kindle** *[kindle]* (Kindle Fire должен детектиться как Андроид)
+- **PlayStation Vita** *[psvita]*
+- **Nintendo DSi** *[dsi]*
+- **Nintendo 3DS** *[3ds]*
+- **Linux** *[linux]* — на самом деле любой девайс на основе линукса, не попавший в перечисленные выше
