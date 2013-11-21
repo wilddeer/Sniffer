@@ -1,3 +1,3 @@
 {{#feature}}
-- **{{name}}** *[{{prop}}]*{{comment.ru}}
+- **{{name.ru}}** *[{{prop}}]*{{comment.ru}}
 {{/feature}}

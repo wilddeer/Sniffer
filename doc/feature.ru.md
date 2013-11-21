@@ -1,3 +1,3 @@
-- **Black and white** *[bw]*
-- **Mobile** *[mobile]*
-- **Serverside rendering** *[serverside]*
+- **Черно-белый** *[bw]*
+- **Мобильный** *[mobile]*
+- **Серверный рендеринг** *[serverside]*

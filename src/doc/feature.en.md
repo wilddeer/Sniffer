@@ -1,3 +1,3 @@
 {{#feature}}
-- **{{name}}** *[{{prop}}]*{{comment.en}}
+- **{{name.en}}** *[{{prop}}]*{{comment.en}}
 {{/feature}}

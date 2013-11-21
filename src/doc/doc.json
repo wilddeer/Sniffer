@@ -115,15 +115,24 @@
 	],
 	"feature": [
 		{
-			"name": "Black and white",
+			"name": {
+				"en": "Black and white",
+				"ru": "Черно-белый"
+			},
 			"prop": "bw"
 		},
 		{
-			"name": "Mobile",
+			"name": {
+				"en": "Mobile",
+				"ru": "Мобильный"
+			},
 			"prop": "mobile"
 		},
 		{
-			"name": "Serverside rendering",
+			"name": {
+				"en": "Serverside rendering",
+				"ru": "Серверный рендеринг"
+			},
 			"prop": "serverside"
 		}
 	]

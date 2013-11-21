@@ -1,10 +1,10 @@
 #Sniffer
 
-##&rsquo;cause if u can&rsquo;t detect it, u should sniff it!
+##&rsquo;cause if you can&rsquo;t detect it, you should sniff it!
 
 Sniffer is a clientside browser/engine/os/device detection tool
 
-> -- Why u no feature-detect??/?//
+> -- Why you no feature-detect??/?//
 
 I feature-detect like a boss. But when I can't, I use dirty hacks to help me out.
 
@@ -62,7 +62,7 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 **Features:**
 
 {{#feature}}
-- **{{name}}** *[{{prop}}]*{{comment.en}}
+- **{{name.en}}** *[{{prop}}]*{{comment.en}}
 {{/feature}}
 
 ##License
