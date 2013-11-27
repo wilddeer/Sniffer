@@ -3,7 +3,7 @@ html.bw body {
 	background: white;
 }
 
-/* fu ovi! */
+/* fu, ovi! */
 html.ovi body {
 	color: red;
 	background: green;
