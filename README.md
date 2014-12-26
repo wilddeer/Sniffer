@@ -71,6 +71,7 @@ Class/property names in square brackets.
 - **Opera Mini** *[operamini]*
 - **Nokia Browser** *[nokiabrowser]* (!= Nokia Xpress) — Symbian Belle phones
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
+- **Sailfish Browser** *[sailfishbrowser]*
 
 No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want a Safari test, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
 
@@ -89,6 +90,7 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 - **Android** *[android]*
 - **iOS** *[ios]*
 - **Blackberry** *[blackberry]*
+- **Sailfish** *[sailfish]*
 - **Symbian** *[symbian]*
 - **Kindle** *[kindle]* (Kindle Fire should be detected as Android)
 - **PlayStation Vita** *[psvita]*

@@ -22,6 +22,26 @@ window.Sniffer = (function(ua, platform) {
 		},
 		data = {
 			browser: [
+				// Sailfish
+				{
+					test: [
+						{
+							string: ua,
+							search: 'SailfishBrowser'
+						}
+					],
+					browser: {
+						name: 'sailfishbrowser',
+						engine: 'gecko',
+						version: {
+							string: ua,
+							search: 'SailfishBrowser/'
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
 				// IE
 				{
 					test: [
@@ -224,6 +244,21 @@ window.Sniffer = (function(ua, platform) {
 				}
 			],
 			os: [
+				// Sailfish
+				{
+					test: [
+						{
+							string: ua,
+							search: 'Sailfish'
+						}
+					],
+					os: {
+						name: 'sailfish'
+					},
+					features: {
+						mobile: true
+					}
+				},
 				// Windows Phone
 				{
 					test: [

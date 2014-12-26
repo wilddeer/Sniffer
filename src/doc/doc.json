@@ -35,6 +35,10 @@
 				"en": " — Nokia Asha, Series40 & Series60 phones, etc.",
 				"ru": " — Nokia Asha, мобилки на Series40 и Series60 и другие"
 			}
+		},
+		{
+			"name": "Sailfish Browser",
+			"prop": "sailfishbrowser"
 		}
 	],
 	"os": [
@@ -61,6 +65,10 @@
 		{
 			"name": "Blackberry",
 			"prop": "blackberry"
+		},
+		{
+			"name": "Sailfish",
+			"prop": "sailfish"
 		},
 		{
 			"name": "Symbian",

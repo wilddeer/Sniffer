@@ -4,6 +4,7 @@
 - **Android** *[android]*
 - **iOS** *[ios]*
 - **Blackberry** *[blackberry]*
+- **Sailfish** *[sailfish]*
 - **Symbian** *[symbian]*
 - **Kindle** *[kindle]* (Kindle Fire должен детектиться как Андроид)
 - **PlayStation Vita** *[psvita]*
