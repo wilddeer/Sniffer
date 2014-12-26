@@ -5,28 +5,36 @@
  *
  * MIT License
  */
-window.Sniffer = (function(ua, platform) {
-	var tag = document.getElementsByTagName('html')[0],
-		Sniffer = {
-			browser: {
-				/*
-				name
-				version
-				engine
-				*/
-			},
-			os: {
-				/*
-				name
-				version
-				*/
-			},
-			features: {
-				bw: false,
-				mobile: false,
-				serverside: false
-			}
-		},
+window.Sniffer = (function(win) {
+	function _Sniffer(win) {
+		var ua, platform, vendor,
+			tag = document.getElementsByTagName('html')[0],
+			data,
+			sniff = {
+				browser: {
+					name: '',
+					version: NaN,
+					engine: ''
+				},
+				os: {
+					name: '',
+					version: NaN
+				},
+				features: {
+					bw: false,
+					mobile: false,
+					tv: false,
+					proxy: false
+				}
+			};
+
+		//return initial sniff state in case no window object passed
+		if (!win) return sniff;
+
+		ua = win.navigator && win.navigator.userAgent;
+		platform = win.navigator && win.navigator.platform;
+		vendor = win.navigator && win.navigator.vendor;
+
 		data = {
 			browser: [
 				// Sailfish
@@ -87,7 +95,7 @@ window.Sniffer = (function(ua, platform) {
 				{
 					test: [
 						{
-							string: navigator.vendor,
+							string: vendor,
 							search: 'Opera Software'
 						}
 					],
@@ -176,7 +184,7 @@ window.Sniffer = (function(ua, platform) {
 					},
 					features: {
 						mobile: true,
-						serverside: true
+						proxy: true
 					}
 				},
 				// Opera Mini Webkit - future proof
@@ -197,14 +205,14 @@ window.Sniffer = (function(ua, platform) {
 					},
 					features: {
 						mobile: true,
-						serverside: true
+						proxy: true
 					}
 				},
 				// Opera
 				{
 					test: [
 						{
-							prop: window.opera
+							prop: win.opera
 						}
 					],
 					browser: {
@@ -234,7 +242,7 @@ window.Sniffer = (function(ua, platform) {
 					},
 					features: {
 						mobile: true,
-						serverside: true
+						proxy: true
 					}
 				},
 				// some other webkit browser
@@ -247,6 +255,18 @@ window.Sniffer = (function(ua, platform) {
 					],
 					browser: {
 						engine: 'webkit'
+					}
+				},
+				// some other gecko browser
+				{
+					test: [
+						{
+							string: ua,
+							search: 'Gecko/'
+						}
+					],
+					browser: {
+						engine: 'gecko'
 					}
 				}
 			],
@@ -464,6 +484,24 @@ window.Sniffer = (function(ua, platform) {
 						mobile: true
 					}
 				},
+				// Viera smart tv
+				{
+					test: [
+						{
+							string: ua,
+							search: 'Viera'
+						}
+					],
+					os: {
+						name: 'viera'
+					},
+					browser: {
+						engine: 'webkit'
+					},
+					features: {
+						tv: true
+					}
+				},
 				// something linux-based, could be anything
 				{
 					test: [
@@ -492,69 +530,75 @@ window.Sniffer = (function(ua, platform) {
 			]
 		};
 
-	function init() {
-		for (var i in data) {
-			test(data[i]);
-		};
-		
-		setClasses();
-	}
+		function init() {
+			for (var i in data) {
+				test(data[i]);
+			};
 
-	function setClasses() {
-		var className = [tag.className];
-
-		Sniffer.browser.name && className.push(Sniffer.browser.name);
-		Sniffer.browser.engine && className.push(Sniffer.browser.engine);
-		Sniffer.os.name && className.push(Sniffer.os.name);
-
-		for (var prop in Sniffer.features) {
-			if (Sniffer.features[prop]) className.push(prop);
+			setClasses();
 		}
 
-		tag.className = className.join(' ');
-	}
+		function setClasses() {
+			var className = [tag.className];
 
-	function test(obj) {
-		for (var i=0; i<obj.length; i++)	{
-			var test = true;
+			sniff.browser.name && className.push(sniff.browser.name);
+			sniff.browser.engine && className.push(sniff.browser.engine);
+			sniff.os.name && className.push(sniff.os.name);
 
-			for (var j=0; j<obj[i].test.length; j++) {
-				if (!obj[i].test[j].string || !obj[i].test[j].search || obj[i].test[j].string.toLowerCase().indexOf(obj[i].test[j].search.toLowerCase()) == -1) {
-					if (obj[i].test[j].prop === undefined) {
-						test = false;
-						break;
+			for (var prop in sniff.features) {
+				if (sniff.features[prop]) className.push(prop);
+			}
+
+			tag.className = className.join(' ');
+		}
+
+		function test(obj) {
+			for (var i=0; i<obj.length; i++) {
+				var test = true;
+
+				for (var j=0; j<obj[i].test.length; j++) {
+					if (!obj[i].test[j].string || !obj[i].test[j].search || obj[i].test[j].string.toLowerCase().indexOf(obj[i].test[j].search.toLowerCase()) == -1) {
+						if (obj[i].test[j].prop === undefined) {
+							test = false;
+							break;
+						}
 					}
 				}
-			}
 
-			if (test) {
-				apply(obj[i]);
-				break;
+				if (test) {
+					apply(obj[i]);
+					break;
+				}
 			}
 		}
-	}
 
-	function apply(obj) {
-		for (var i in data) {
-			if (obj[i]) {
-				if (obj[i].version) {
-					obj[i].version = getVersion(obj[i].version);
+		function apply(obj) {
+			for (var i in data) {
+				if (obj[i]) {
+					if (obj[i].version) {
+						obj[i].version = getVersion(obj[i].version);
+					}
+
+					for (var prop in obj[i]) {
+						sniff[i][prop] = obj[i][prop];
+					}
 				}
+			};
+		}
+		
+		function getVersion(obj) {
+			var index = obj.string.indexOf(obj.search);
+			if (index == -1) return NaN;
+			return parseFloat(obj.string.substring(index+obj.search.length));
+		}
 
-				for (var prop in obj[i]) {
-					Sniffer[i][prop] = obj[i][prop];
-				}
-			}
-		};
+		init();
+
+		return sniff;
 	}
-	
-	function getVersion(obj) {
-		var index = obj.string.indexOf(obj.search);
-		if (index == -1) return undefined;
-		return parseFloat(obj.string.substring(index+obj.search.length));
-	}
 
-	init();
+	//expose _Sniffer function for testing
+	if (win.SNIFFER_TEST_RUN) win._Sniffer = _Sniffer;
 
-	return Sniffer;
-})(window.navigator.userAgent, window.navigator.platform);
+	return _Sniffer(win);
+})(window);

@@ -138,10 +138,10 @@
 		},
 		{
 			"name": {
-				"en": "Serverside rendering",
-				"ru": "Серверный рендеринг"
+				"en": "Proxy broswer (serverside rendering)",
+				"ru": "Прокси-браузер (серверный рендеринг)"
 			},
-			"prop": "serverside"
+			"prop": "proxy"
 		}
 	]
 }

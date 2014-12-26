@@ -102,7 +102,7 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 
 - **Black and white** *[bw]*
 - **Mobile** *[mobile]*
-- **Serverside rendering** *[serverside]*
+- **Proxy broswer (serverside rendering)** *[proxy]*
 
 ##License
 

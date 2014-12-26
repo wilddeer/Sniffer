@@ -1,3 +1,3 @@
 - **Black and white** *[bw]*
 - **Mobile** *[mobile]*
-- **Serverside rendering** *[serverside]*
+- **Proxy broswer (serverside rendering)** *[proxy]*
