@@ -6,12 +6,24 @@ window.Sniffer = (function(win) {
 			sniff = {
 				browser: {
 					name: '',
-					version: NaN,
+					shortname: '',
+					version: {
+						major: NaN,
+						minor: NaN,
+						patch: NaN
+					},
 					engine: ''
 				},
 				os: {
 					name: '',
-					version: NaN
+					shortname: '',
+					version: {
+						name: '',
+						string: '',
+						major: NaN,
+						minor: NaN,
+						patch: NaN
+					}
 				},
 				features: {
 					bw: false,
@@ -39,9 +51,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'sailfishbrowser',
+						name: 'Sailfish Browser',
+						shortname: 'sailfishbrowser',
 						engine: 'gecko',
-						version: {
+						$version: {
 							string: ua,
 							search: 'SailfishBrowser/'
 						}
@@ -59,9 +72,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'ie',
+						name: 'Internet Explorer',
+						shortname: 'ie',
 						engine: 'trident',
-						version: {
+						$version: {
 							string: ua,
 							search: 'MSIE '
 						}
@@ -76,9 +90,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'ie',
+						name: 'Internet Explorer',
+						shortname: 'ie',
 						engine: 'trident',
-						version: {
+						$version: {
 							string: ua,
 							search: 'rv:'
 						}
@@ -93,9 +108,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
+						name: 'Opera',
+						shortname: 'opera',
 						engine: 'webkit',
-						name: 'opera',
-						version: {
+						$version: {
 							string: ua,
 							search: 'OPR/'
 						}
@@ -110,9 +126,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
+						name: 'Chrome',
+						shortname: 'chrome',
 						engine: 'webkit',
-						name: 'chrome',
-						version: {
+						$version: {
 							string: ua,
 							search: 'Chrome/'
 						}
@@ -127,9 +144,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'firefox',
+						name: 'Firefox',
+						shortname: 'firefox',
 						engine: 'gecko',
-						version: {
+						$version: {
 							string: ua,
 							search: 'Firefox/'
 						}
@@ -144,9 +162,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
+						name: 'Nokia Browser',
+						shortname: 'nokiabrowser',
 						engine: 'webkit',
-						name: 'nokiabrowser',
-						version: {
+						$version: {
 							string: ua,
 							search: 'NokiaBrowser/'
 						}
@@ -168,9 +187,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'operamini',
+						name: 'Opera Mini',
+						shortname: 'operamini',
 						engine: 'presto',
-						version: {
+						$version: {
 							string: ua,
 							search: 'Version/'
 						}
@@ -193,7 +213,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'opera',
+						name: 'Opera Mini',
+						shortname: 'operamini',
 						engine: 'webkit'
 					},
 					features: {
@@ -209,9 +230,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'opera',
+						name: 'Opera',
+						shortname: 'opera',
 						engine: 'presto',
-						version: {
+						$version: {
 							string: ua,
 							search: 'Version/'
 						}
@@ -226,9 +248,10 @@ window.Sniffer = (function(win) {
 						}
 					],
 					browser: {
-						name: 'ovi',
+						name: 'Ovi Browser',
+						shortname: 'ovi',
 						engine: 'gecko',
-						version: {
+						$version: {
 							string: ua,
 							search: 'OviBrowser/'
 						}
@@ -273,7 +296,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'sailfish'
+						name: 'Sailfish OS',
+						shortname: 'sailfish'
 					},
 					features: {
 						mobile: true
@@ -288,8 +312,9 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'winphone',
-						version: {
+						name: 'Windows Phone',
+						shortname: 'winphone',
+						$version: {
 							string: ua,
 							search: 'Windows Phone '
 						}
@@ -307,19 +332,50 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'win'
+						name: 'Windows',
+						shortname: 'win',
+						$version: {
+							string: ua,
+							search: 'Windows NT ',
+							names: {
+								'6.3': '8.1',
+								'6.2': '8',
+								'6.1': '7',
+								'6.0': 'Vista',
+								'5.2': 'Server 2003 / XP x64 Edition',
+								'5.1': 'XP',
+								'5.01': '2000',
+								'5.0': '2000'
+							}
+						}
 					}
 				},
-				// Mac
+				// Mac OS X
 				{
 					test: [
 						{
 							string: platform,
 							search: 'Mac'
+						},
+						{
+							string: ua,
+							search: 'OS X 10'
 						}
 					],
 					os: {
-						name: 'mac'
+						name: 'Mac OS X',
+						shortname: 'osx',
+						$version: {
+							string: ua,
+							search: /OS X 10(_|\.)/,
+							names: {
+								'6': 'Snow Leopard',
+								'7': 'Lion',
+								'8': 'Mountain Lion',
+								'9': 'Mavericks',
+								'10': 'Yosemite'
+							}
+						}
 					}
 				},
 				// iOS
@@ -331,8 +387,9 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'ios',
-						version: {
+						name: 'iOS',
+						shortname: 'ios',
+						$version: {
 							string: ua,
 							search: 'iPhone OS '
 						}
@@ -350,8 +407,9 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'android',
-						version: {
+						name: 'Android',
+						shortname: 'android',
+						$version: {
 							string: ua,
 							search: 'Android '
 						}
@@ -369,8 +427,9 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'blackberry',
-						version: {
+						name: 'BlackBerry',
+						shortname: 'blackberry',
+						$version: {
 							string: ua,
 							search: 'BB'
 						}
@@ -388,7 +447,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'symbian'
+						name: 'Symbian',
+						shortname: 'symbian'
 					},
 					features: {
 						mobile: true
@@ -403,7 +463,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'symbian'
+						name: 'Symbian',
+						shortname: 'symbian'
 					},
 					features: {
 						mobile: true
@@ -418,8 +479,9 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'kindle',
-						version: {
+						name: 'Kindle',
+						shortname: 'kindle',
+						$version: {
 							string: ua,
 							search: 'Kindle/'
 						}
@@ -438,7 +500,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'psvita'
+						name: 'PlayStation Vita',
+						shortname: 'psvita'
 					},
 					features: {
 						mobile: true
@@ -453,7 +516,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'dsi'
+						name: 'Nintendo DSi',
+						shortname: 'dsi'
 					},
 					features: {
 						mobile: true
@@ -468,7 +532,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: '3ds'
+						name: 'Nintendo 3DS',
+						shortname: '3ds'
 					},
 					browser: {
 						engine: 'webkit'
@@ -486,7 +551,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'viera'
+						name: 'Viera',
+						shortname: 'viera'
 					},
 					browser: {
 						engine: 'webkit'
@@ -504,7 +570,8 @@ window.Sniffer = (function(win) {
 						}
 					],
 					os: {
-						name: 'linux'
+						name: 'Linux',
+						shortname: 'linux'
 					}
 				}
 			],
@@ -534,9 +601,9 @@ window.Sniffer = (function(win) {
 		function setClasses() {
 			var className = [tag.className];
 
-			sniff.browser.name && className.push(sniff.browser.name);
+			sniff.browser.shortname && className.push(sniff.browser.shortname);
 			sniff.browser.engine && className.push(sniff.browser.engine);
-			sniff.os.name && className.push(sniff.os.name);
+			sniff.os.shortname && className.push(sniff.os.shortname);
 
 			for (var prop in sniff.features) {
 				if (sniff.features[prop]) className.push(prop);
@@ -568,21 +635,52 @@ window.Sniffer = (function(win) {
 		function apply(obj) {
 			for (var i in data) {
 				if (obj[i]) {
-					if (obj[i].version) {
-						obj[i].version = getVersion(obj[i].version);
+					if (obj[i].$version) {
+						var version = getVersion(obj[i].$version);
+
+						if (version) {
+							var semverArr = version.split('.');
+
+							obj[i].version = {
+								string: version,
+								major: (semverArr[0]? parseInt(semverArr[0]): NaN),
+								minor: (semverArr[1]? parseInt(semverArr[1]): NaN),
+								patch: (semverArr[2]? parseInt(semverArr[2]): NaN),
+								name: (obj[i].$version.names? obj[i].$version.names[version] || '': '')
+							};
+						}
 					}
 
 					for (var prop in obj[i]) {
-						sniff[i][prop] = obj[i][prop];
+						if (obj[i].hasOwnProperty(prop) && prop[0] !== '$') sniff[i][prop] = obj[i][prop];
 					}
 				}
 			};
 		}
-		
+
 		function getVersion(obj) {
-			var index = obj.string.indexOf(obj.search);
-			if (index == -1) return NaN;
-			return parseFloat(obj.string.substring(index+obj.search.length));
+			var search;
+
+			if (obj.search instanceof RegExp) {
+				search = (obj.string.match(obj.search) || [])[0];
+
+				if (!search) return;
+			}
+			else {
+				search = obj.search;
+			}
+
+			var index = obj.string.indexOf(search),
+				substring;
+
+			if (index == -1) return;
+
+			substring = obj.string.substring(index+search.length);
+			regexpResult = /^(\d+\.){0,2}\d+/.exec(substring);
+
+			if (!regexpResult) return;
+
+			return regexpResult[0];
 		}
 
 		init();

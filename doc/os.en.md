@@ -1,5 +1,5 @@
 - **Windows** *[win]*
-- **Mac** *[mac]*
+- **OS X** *[osx]*
 - **Windows Phone** *[winphone]*
 - **Android** *[android]*
 - **iOS** *[ios]*

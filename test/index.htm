@@ -71,10 +71,18 @@
 		testConsole.log('<b>Platform</b><br>'+navigator.platform);
 		testConsole.log('<b>HTML class</b><br>'+document.getElementsByTagName('html')[0].className);
 		testConsole.log('<b>Sniffer.os.name</b><br>'+Sniffer.os.name);
-		testConsole.log('<b>Sniffer.os.version</b><br>'+Sniffer.os.version);
+		testConsole.log('<b>Sniffer.os.shortname</b><br>'+Sniffer.os.shortname);
+		testConsole.log('<b>Sniffer.os.version.name</b><br>'+Sniffer.os.version.name);
+		testConsole.log('<b>Sniffer.os.version.string</b><br>'+Sniffer.os.version.string);
+		testConsole.log('<b>Sniffer.os.version.major</b><br>'+Sniffer.os.version.major);
+		testConsole.log('<b>Sniffer.os.version.minor</b><br>'+Sniffer.os.version.minor);
+		testConsole.log('<b>Sniffer.os.version.patch</b><br>'+Sniffer.os.version.patch);
 		testConsole.log('<b>Sniffer.browser.name</b><br>'+Sniffer.browser.name);
+		testConsole.log('<b>Sniffer.browser.shortname</b><br>'+Sniffer.browser.shortname);
 		testConsole.log('<b>Sniffer.browser.engine</b><br>'+Sniffer.browser.engine);
-		testConsole.log('<b>Sniffer.browser.version</b><br>'+Sniffer.browser.version);
+		testConsole.log('<b>Sniffer.browser.version.major</b><br>'+Sniffer.browser.version.major);
+		testConsole.log('<b>Sniffer.browser.version.minor</b><br>'+Sniffer.browser.version.minor);
+		testConsole.log('<b>Sniffer.browser.version.patch</b><br>'+Sniffer.browser.version.patch);
 
 		for (var prop in Sniffer.features) {
 			testConsole.log('<b>Sniffer.features.'+prop+':</b><br>'+Sniffer.features[prop]);
