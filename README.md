@@ -17,22 +17,6 @@ I feature-detect like a boss. But when I can't, I use dirty hacks to help me out
 - **sniffer.js** – full dev script
 - **sniffer.min.js** – minified production script
 
-###Variations
-
-####Pure
-
-Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it.
-
-- **sniffer.pure.js** – full dev script
-- **sniffer.pure.min.js** – minified production script
-
-####Exposed
-
-Default script + Sniffer function in global scope.
-
-- **sniffer.exposed.js** – full dev script
-- **sniffer.exposed.min.js** – minified production script
-
 ##Use it
 
 Just put it in the `<head>`, like so :
@@ -136,6 +120,22 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 - **Mobile** *[mobile]*
 - **TV** *[tv]*
 - **Proxy broswer (serverside rendering)** *[proxy]*
+
+##Script variations
+
+###Pure
+
+Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it.
+
+- **sniffer.pure.js** – full dev script
+- **sniffer.pure.min.js** – minified production script
+
+###Exposed
+
+Default script + Sniffer function in global scope.
+
+- **sniffer.exposed.js** – full dev script
+- **sniffer.exposed.min.js** – minified production script
 
 ##License
 
