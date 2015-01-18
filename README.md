@@ -9,13 +9,13 @@ Sniffer is a clientside browser/engine/os/device detection tool
 I feature-detect like a boss. But when I can't, I use dirty hacks to help me out.
 
 - Some features are just undetectable. For instance, `overflow: scroll` behavior on mobile devices is one of them. Use da Sniffer!
-- You have to sniff [false-positives & false-negatives](https://docs.google.com/spreadsheet/ccc?key=0AjA1cIs8C8MGdFdyQ0lMQnhMbHJEeVZpMW9XejhzU2c&usp=sharing) (some of my mobile browsers tests there).
-- You want to support those two idiots coming to your site from Kindle? I do! Make 'em happy with contrasting colors and disabled animations.
+- You have to sniff [false-positive & false-negative detects](https://docs.google.com/spreadsheet/ccc?key=0AjA1cIs8C8MGdFdyQ0lMQnhMbHJEeVZpMW9XejhzU2c&usp=sharing) (my mobile browsers tests there).
+- You want to support those two idiots coming to your site from Kindle? I do! Make 'em happy with contrast colors and disabled animations.
 
 ##Get it
 
-- **sniffer.js** -- full dev script
-- **sniffer.min.js** -- minified production script
+- **sniffer.js** – full dev script
+- **sniffer.min.js** – minified production script
 
 ##Use it
 
@@ -25,7 +25,7 @@ Just put it in the `<head>`, like so :
 <script src="path/to/sniffer.js"></script>
 ```
 
-That's it. Now you'll have the `Sniff` object in your global scope:
+That's it. Now you'll have `Sniff` object in your global scope:
 
 ```js
 {
@@ -60,7 +60,7 @@ If Sniffer can't detect something, it will leave empty string for strings or `Na
 	
 You'll also have browser name, browser engine name, OS name and device features as classes in `<thml>` tag. Use them to vary the styles:
 
-````
+```css
 html.bw body {
 	color: black;
 	background: white;
@@ -72,7 +72,7 @@ html.ovi body {
 	background: green;
 }
 
-````
+```
 
 ##Detects
 
@@ -89,7 +89,7 @@ Class names/shortcodes in square brackets.
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
 - **Sailfish Browser** *[sailfishbrowser]*
 
-No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want a Safari test, try `Sniffer.browser.name === undefined && Sniffer.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
+No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want a Safari test, try `Sniff.browser.name === '' && Sniff.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
 
 **Engines:**
 
@@ -120,6 +120,22 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 - **Mobile** *[mobile]*
 - **TV** *[tv]*
 - **Proxy broswer (serverside rendering)** *[proxy]*
+
+##Script variations
+
+###Pure
+
+Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it.
+
+- **sniffer.pure.js** – full dev script
+- **sniffer.pure.min.js** – minified production script
+
+###Exposed
+
+Default script + Sniffer function in global scope.
+
+- **sniffer.exposed.js** – full dev script
+- **sniffer.exposed.min.js** – minified production script
 
 ##License
 
