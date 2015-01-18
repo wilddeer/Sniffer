@@ -6,76 +6,60 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		banner: '/*!\n * Sniffer is a clientside browser/engine/os/device detection tool\n * v. <%= pkg.version %> | <%= pkg.homepage %>\n * Copyright <%= pkg.author.name %> | <%= pkg.author.url %>\n *\n * MIT License\n */\n',
 
+		clean: ['dist'],
+		concat: {
+			'pure': {
+				options: {
+					banner: '<%= banner %>'
+				},
+				src: ['src/sniffer.js'],
+				dest: 'dist/sniffer.pure.js',
+			},
+			'default': {
+				src: [
+					'src/sniffer.js',
+					'src/run.js',
+					'src/classes.js'
+				],
+				dest: 'dist/sniffer.js',
+			},
+			'default+expose': {
+				src: [
+					'src/sniffer.js',
+					'src/run.js',
+					'src/classes.js',
+					'src/expose.js'
+				],
+				dest: 'dist/sniffer.expose.js',
+			},
+		},
+
+		wrap: {
+			options: {
+				wrapper: ['<%= banner %>\n(function() {', '})();'],
+				indent: '\t'
+			},
+			dist: {
+				src: [
+					'dist/sniffer.js',
+					'dist/sniffer.expose.js'
+				],
+				dest: ''
+			}
+		},
+
 		uglify: {
 			options: {
 				banner: '<%= banner %>'
 			},
 			dist: {
-				files: {
-					'sniffer.min.js': ['src/sniffer.js']
-				}
-			},
-		},
-
-		concat: {
-			options: {
-				banner: '<%= banner %>'
-			},
-			dist: {
-				src: ['src/sniffer.js'],
-				dest: 'sniffer.js',
-			},
-		},
-
-		mustache_render: {
-			options: {
-				directory: "src/doc/parts",
-				extension: ".md"
-			},
-			browser: {
-				data: "src/doc/doc.json",
-				template: "src/doc/browser.en.md",
-				dest: "doc/browser.en.md"
-			},
-			os: {
-				data: "src/doc/doc.json",
-				template: "src/doc/os.en.md",
-				dest: "doc/os.en.md"
-			},
-			engine: {
-				data: "src/doc/doc.json",
-				template: "src/doc/engine.en.md",
-				dest: "doc/engine.en.md"
-			},
-			feature: {
-				data: "src/doc/doc.json",
-				template: "src/doc/feature.en.md",
-				dest: "doc/feature.en.md"
-			},
-			browserRu: {
-				data: "src/doc/doc.json",
-				template: "src/doc/browser.ru.md",
-				dest: "doc/browser.ru.md"
-			},
-			osRu: {
-				data: "src/doc/doc.json",
-				template: "src/doc/os.ru.md",
-				dest: "doc/os.ru.md"
-			},
-			engineRu: {
-				data: "src/doc/doc.json",
-				template: "src/doc/engine.ru.md",
-				dest: "doc/engine.ru.md"
-			},
-			featureRu: {
-				data: "src/doc/doc.json",
-				template: "src/doc/feature.ru.md",
-				dest: "doc/feature.ru.md"
-			},
-			readme: {
-				data: "src/doc/doc.json",
-				template: "src/doc/README.md",
-				dest: "README.md"
+				files: [{
+		            expand: true,
+		            src: '*.js',
+		            dest: 'dist/min',
+		            cwd: 'dist',
+		            rename: function(dest, src) { return dest + '/' + src.replace('.js', '.min.js'); }
+		        }]
 			},
 		},
 
@@ -95,8 +79,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-mustache-render');
-	grunt.registerTask('build', ['uglify', 'concat']);
-	grunt.registerTask('w', ['build', 'mustache_render', 'watch']);
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-wrap');
+	grunt.registerTask('build', ['clean', 'concat', 'wrap', 'uglify']);
+	grunt.registerTask('w', ['build', 'watch']);
 	grunt.registerTask('default', 'build');
 };

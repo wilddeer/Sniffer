@@ -19,30 +19,46 @@ I feature-detect like a boss. But when I can't, I use dirty hacks to help me out
 
 ##Use it
 
-Put it in your `<head>`, where you keep your [Modernizr](http://modernizr.com) (Modernizr is not required, but you do use it, right?).
+Just put it in the `<head>`, like so :
 
-Now you have this beautiful object in your global scope:
+```js
+<script src="path/to/sniffer.js"></script>
+```
 
-````
-Sniffer = {
+That's it. Now you'll have the `Sniff` object in your global scope:
+
+```js
+{
 	browser: {
-		name,
-		engine,
-		version
+		fullName: String, // full human readable name
+		name: String, // shortcode
+		version: String, // semantic version, up to three parts (major.minor.patch)
+		majorVersion: Number,
+		minorVersion: Number,
+		patchVersion: Number,
+		engine: String // shortcode
 	},
 	os: {
-		name,
-		version
+		fullName: String, // full human readable name
+		name: String, // shortcode
+		version: String, // semantic version, up to three parts (major.minor.patch)
+		versionName: String, // human readable version name, e.g. 'Vista', 'Mavericks', etc.
+		majorVersion: Number,
+		minorVersion: Number,
+		patchVersion: Number,
 	},
 	features: {
-		bw: bool, /* black and white (e-book readers) */
-		mobile: bool,
-		serverside: bool /* serverside js & rendering, like in Opera Mini */
+		bw: Boolean, /* black and white (e-book readers) */
+		mobile: Boolean,
+		tv: Boolean,
+		proxy: Boolean /* serverside js & rendering, like in Opera Mini */
 	}
-}
-````
+};
+```
+
+If Sniffer can't detect something, it will leave empty string for strings or `NaN` for numbers.
 	
-You also have some fancy classes in your `HTML` tag: one for browser name, one for browser engine, one for OS name and one for each feature that appears to be true. Use them to vary the styles:
+You'll also have browser name, browser engine name, OS name and device features as classes in `<thml>` tag. Use them to vary the styles:
 
 ````
 html.bw body {
@@ -60,7 +76,7 @@ html.ovi body {
 
 ##Detects
 
-Class/property names in square brackets.
+Class names/shortcodes in square brackets.
 
 **Browsers:**
 
@@ -82,7 +98,7 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 - **Trident** *[trident]*
 - **Presto** *[presto]*
 
-**OS/Device:**
+**OS/Devices:**
 
 - **Windows** *[win]*
 - **Mac** *[mac]*
@@ -102,6 +118,7 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 
 - **Black and white** *[bw]*
 - **Mobile** *[mobile]*
+- **TV** *[tv]*
 - **Proxy broswer (serverside rendering)** *[proxy]*
 
 ##License

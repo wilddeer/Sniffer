@@ -1,4 +1,0 @@
-- **WebKit** *[webkit]*
-- **Gecko** *[gecko]*
-- **Trident** *[trident]*
-- **Presto** *[presto]*

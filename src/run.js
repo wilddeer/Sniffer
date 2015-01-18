@@ -1,2 +1,2 @@
-//run
-window.Sniff = Sniffer(window)
+//run Sniffer
+window.Sniff = Sniffer(window);

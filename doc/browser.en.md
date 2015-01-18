@@ -1,8 +1,0 @@
-- **Chrome** *[chrome]*
-- **Firefox** *[firefox]*
-- **IE** *[ie]*
-- **Opera** *[opera]*
-- **Opera Mini** *[operamini]*
-- **Nokia Browser** *[nokiabrowser]* (!= Nokia Xpress) — Symbian Belle phones
-- **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
-- **Sailfish Browser** *[sailfishbrowser]*

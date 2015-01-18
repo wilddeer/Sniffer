@@ -1,2 +1,2 @@
-//expose Sniff function
+//expose Sniffer function
 window.Sniffer = Sniffer;
