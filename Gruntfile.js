@@ -23,14 +23,14 @@ module.exports = function(grunt) {
 				],
 				dest: 'dist/sniffer.js',
 			},
-			'default+expose': {
+			'default+exposed': {
 				src: [
 					'src/sniffer.js',
 					'src/run.js',
 					'src/classes.js',
 					'src/expose.js'
 				],
-				dest: 'dist/sniffer.expose.js',
+				dest: 'dist/sniffer.exposed.js',
 			},
 		},
 
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 			dist: {
 				src: [
 					'dist/sniffer.js',
-					'dist/sniffer.expose.js'
+					'dist/sniffer.exposed.js'
 				],
 				dest: ''
 			}
@@ -63,6 +63,15 @@ module.exports = function(grunt) {
 			},
 		},
 
+		connect: {
+            server: {
+                options: {
+                    port: 8001,
+                    hostname: '*'
+                }
+            }
+        },
+
 		watch: {
 			js: {
 				files: ['src/*.js', 'package.json'],
@@ -78,10 +87,11 @@ module.exports = function(grunt) {
 	// build
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-wrap');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.registerTask('build', ['clean', 'concat', 'wrap', 'uglify']);
-	grunt.registerTask('w', ['build', 'watch']);
+	grunt.registerTask('w', ['build', 'connect', 'watch']);
 	grunt.registerTask('default', 'build');
 };

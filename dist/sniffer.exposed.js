@@ -522,4 +522,7 @@
 	    tag.className = classNameArr.join(' ');
 	})();
 	
+	//expose Sniffer function
+	window.Sniffer = Sniffer;
+	
 })();

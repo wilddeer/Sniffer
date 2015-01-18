@@ -1,7 +1,5 @@
-function Sniffer(win) {
-	var ua, platform, vendor,
-		data,
-		sniff = {
+function Sniffer(ua) {
+	var sniff = {
 			browser: {
 				fullName: '',
 				name: '',
@@ -26,564 +24,386 @@ function Sniffer(win) {
 				tv: false,
 				proxy: false
 			}
+		},
+
+		data = {
+			browser: [
+				// Sailfish
+				{
+					test: ['SailfishBrowser'],
+					browser: {
+						fullName: 'Sailfish Browser',
+						name: 'sailfishbrowser',
+						engine: 'gecko',
+						$version: {
+							search: 'SailfishBrowser/'
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// IE
+				{
+					test: ['MSIE'],
+					browser: {
+						fullName: 'Internet Explorer',
+						name: 'ie',
+						engine: 'trident',
+						$version: {
+							search: 'MSIE '
+						}
+					}
+				},
+				// IE 11+
+				{
+					test: ['Trident'],
+					browser: {
+						fullName: 'Internet Explorer',
+						name: 'ie',
+						engine: 'trident',
+						$version: {
+							search: 'rv:'
+						}
+					}
+				},
+				// Opera 15+
+				{
+					test: ['OPR/'],
+					browser: {
+						fullName: 'Opera',
+						name: 'opera',
+						engine: 'webkit',
+						$version: {
+							search: 'OPR/'
+						}
+					}
+				},
+				// Chrome
+				{
+					test: ['Chrome'],
+					browser: {
+						fullName: 'Chrome',
+						name: 'chrome',
+						engine: 'webkit',
+						$version: {
+							search: 'Chrome/'
+						}
+					}
+				},
+				// Firefox
+				{
+					test: ['Firefox'],
+					browser: {
+						fullName: 'Firefox',
+						name: 'firefox',
+						engine: 'gecko',
+						$version: {
+							search: 'Firefox/'
+						}
+					}
+				},
+				// Nokia Browser (not Nokia Xpress)
+				{
+					test: ['NokiaBrowser'],
+					browser: {
+						fullName: 'Nokia Browser',
+						name: 'nokiabrowser',
+						engine: 'webkit',
+						$version: {
+							search: 'NokiaBrowser/'
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Opera Mini Presto
+				{
+					test: ['Opera Mini', 'Presto'],
+					browser: {
+						fullName: 'Opera Mini',
+						name: 'operamini',
+						engine: 'presto',
+						$version: {
+							search: 'Version/'
+						}
+					},
+					features: {
+						mobile: true,
+						proxy: true
+					}
+				},
+				// Opera Mini Webkit - future proof
+				{
+					test: ['Opera Mini', 'WebKit'],
+					browser: {
+						fullName: 'Opera Mini',
+						name: 'operamini',
+						engine: 'webkit'
+					},
+					features: {
+						mobile: true,
+						proxy: true
+					}
+				},
+				// Opera
+				{
+					test: ['Opera'],
+					browser: {
+						fullName: 'Opera',
+						name: 'opera',
+						engine: 'presto',
+						$version: {
+							search: 'Version/'
+						}
+					}
+				},
+				// Ovi Browser = Nokia Xpress
+				{
+					test: ['OviBrowser'],
+					browser: {
+						fullName: 'Ovi Browser',
+						name: 'ovi',
+						engine: 'gecko',
+						$version: {
+							search: 'OviBrowser/'
+						}
+					},
+					features: {
+						mobile: true,
+						proxy: true
+					}
+				},
+				// some other webkit browser
+				{
+					test: ['WebKit'],
+					browser: {
+						engine: 'webkit'
+					}
+				},
+				// some other gecko browser
+				{
+					test: ['Gecko/'],
+					browser: {
+						engine: 'gecko'
+					}
+				}
+			],
+			os: [
+				// Sailfish
+				{
+					test: ['Sailfish'],
+					os: {
+						fullName: 'Sailfish OS',
+						name: 'sailfish'
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Windows Phone
+				{
+					test: ['Windows Phone'],
+					os: {
+						fullName: 'Windows Phone',
+						name: 'winphone',
+						$version: {
+							search: 'Windows Phone '
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Windows
+				{
+					test: ['Windows'],
+					os: {
+						fullName: 'Windows',
+						name: 'win',
+						$version: {
+							search: 'Windows NT ',
+							names: {
+								'6.3': '8.1',
+								'6.2': '8',
+								'6.1': '7',
+								'6.0': 'Vista',
+								'5.2': 'Server 2003 / XP x64 Edition',
+								'5.1': 'XP',
+								'5.01': '2000',
+								'5.0': '2000'
+							}
+						}
+					}
+				},
+				// Mac OS X
+				{
+					test: ['Macintosh', 'OS X 10'],
+					os: {
+						fullName: 'Mac OS X',
+						name: 'osx',
+						$version: {
+							search: /OS X 10(_|\.)/,
+							names: {
+								'6': 'Snow Leopard',
+								'7': 'Lion',
+								'8': 'Mountain Lion',
+								'9': 'Mavericks',
+								'10': 'Yosemite'
+							}
+						}
+					}
+				},
+				// iOS
+				{
+					test: ['iPhone'],
+					os: {
+						fullName: 'iOS',
+						name: 'ios',
+						$version: {
+							search: 'iPhone OS '
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Android
+				{
+					test: ['Android'],
+					os: {
+						fullName: 'Android',
+						name: 'android',
+						$version: {
+							search: 'Android '
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// BlackBerry
+				{
+					test: [/(BlackBerry|BB\d+)/],
+					os: {
+						fullName: 'BlackBerry',
+						name: 'blackberry',
+						$version: {
+							search: 'Version/'
+						}
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Symbian
+				{
+					test: ['Symbian'],
+					os: {
+						fullName: 'Symbian',
+						name: 'symbian'
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Symbian
+				{
+					test: ['Series40'],
+					os: {
+						fullName: 'Symbian',
+						name: 'symbian'
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Kindle
+				{
+					test: ['Kindle'],
+					os: {
+						fullName: 'Kindle',
+						name: 'kindle',
+						$version: {
+							search: 'Kindle/'
+						}
+					},
+					features: {
+						bw: true,
+						mobile: true
+					}
+				},
+				// PS Vita
+				{
+					test: ['PlayStation Vita'],
+					os: {
+						fullName: 'PlayStation Vita',
+						name: 'psvita'
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Nintendo DSi
+				{
+					test: ['Nintendo DSi'],
+					os: {
+						fullName: 'Nintendo DSi',
+						name: 'dsi'
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Nintendo 3DS
+				{
+					test: ['Nintendo 3DS'],
+					os: {
+						fullName: 'Nintendo 3DS',
+						name: '3ds'
+					},
+					browser: {
+						engine: 'webkit'
+					},
+					features: {
+						mobile: true
+					}
+				},
+				// Viera smart tv
+				{
+					test: ['Viera'],
+					os: {
+						fullName: 'Viera',
+						name: 'viera'
+					},
+					browser: {
+						engine: 'webkit'
+					},
+					features: {
+						tv: true
+					}
+				},
+				// Sony smart tv
+				{
+					test: ['SonyDTV'],
+					features: {
+						tv: true
+					}
+				}
+			],
+			features: [
+				{
+					test: [/mobile/i],
+					features: {
+						mobile: true
+					}
+				}
+			]
 		};
 
-	//return initial sniff state in case no window object passed
-	if (!win) return sniff;
-
-	ua = win.navigator && win.navigator.userAgent;
-	platform = win.navigator && win.navigator.platform;
-	vendor = win.navigator && win.navigator.vendor;
-
-	data = {
-		browser: [
-			// Sailfish
-			{
-				test: [
-					{
-						string: ua,
-						search: 'SailfishBrowser'
-					}
-				],
-				browser: {
-					fullName: 'Sailfish Browser',
-					name: 'sailfishbrowser',
-					engine: 'gecko',
-					$version: {
-						string: ua,
-						search: 'SailfishBrowser/'
-					}
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// IE
-			{
-				test: [
-					{
-						string: ua,
-						search: 'MSIE'
-					}
-				],
-				browser: {
-					fullName: 'Internet Explorer',
-					name: 'ie',
-					engine: 'trident',
-					$version: {
-						string: ua,
-						search: 'MSIE '
-					}
-				}
-			},
-			// IE 11+
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Trident'
-					}
-				],
-				browser: {
-					fullName: 'Internet Explorer',
-					name: 'ie',
-					engine: 'trident',
-					$version: {
-						string: ua,
-						search: 'rv:'
-					}
-				}
-			},
-			// Opera 15+
-			{
-				test: [
-					{
-						string: vendor,
-						search: 'Opera Software'
-					}
-				],
-				browser: {
-					fullName: 'Opera',
-					name: 'opera',
-					engine: 'webkit',
-					$version: {
-						string: ua,
-						search: 'OPR/'
-					}
-				}
-			},
-			// Chrome
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Chrome'
-					}
-				],
-				browser: {
-					fullName: 'Chrome',
-					name: 'chrome',
-					engine: 'webkit',
-					$version: {
-						string: ua,
-						search: 'Chrome/'
-					}
-				}
-			},
-			// Firefox
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Firefox'
-					}
-				],
-				browser: {
-					fullName: 'Firefox',
-					name: 'firefox',
-					engine: 'gecko',
-					$version: {
-						string: ua,
-						search: 'Firefox/'
-					}
-				}
-			},
-			// Nokia Browser (not Nokia Xpress)
-			{
-				test: [
-					{
-						string: ua,
-						search: 'NokiaBrowser'
-					}
-				],
-				browser: {
-					fullName: 'Nokia Browser',
-					name: 'nokiabrowser',
-					engine: 'webkit',
-					$version: {
-						string: ua,
-						search: 'NokiaBrowser/'
-					}
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Opera Mini Presto
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Opera Mini'
-					},
-					{
-						string: ua,
-						search: 'Presto'
-					}
-				],
-				browser: {
-					fullName: 'Opera Mini',
-					name: 'operamini',
-					engine: 'presto',
-					$version: {
-						string: ua,
-						search: 'Version/'
-					}
-				},
-				features: {
-					mobile: true,
-					proxy: true
-				}
-			},
-			// Opera Mini Webkit - future proof
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Opera Mini'
-					},
-					{
-						string: ua,
-						search: 'WebKit'
-					}
-				],
-				browser: {
-					fullName: 'Opera Mini',
-					name: 'operamini',
-					engine: 'webkit'
-				},
-				features: {
-					mobile: true,
-					proxy: true
-				}
-			},
-			// Opera
-			{
-				test: [
-					{
-						prop: win.opera
-					}
-				],
-				browser: {
-					fullName: 'Opera',
-					name: 'opera',
-					engine: 'presto',
-					$version: {
-						string: ua,
-						search: 'Version/'
-					}
-				}
-			},
-			// Ovi Browser = Nokia Xpress
-			{
-				test: [
-					{
-						string: ua,
-						search: 'OviBrowser'
-					}
-				],
-				browser: {
-					fullName: 'Ovi Browser',
-					name: 'ovi',
-					engine: 'gecko',
-					$version: {
-						string: ua,
-						search: 'OviBrowser/'
-					}
-				},
-				features: {
-					mobile: true,
-					proxy: true
-				}
-			},
-			// some other webkit browser
-			{
-				test: [
-					{
-						string: ua,
-						search: 'WebKit'
-					}
-				],
-				browser: {
-					engine: 'webkit'
-				}
-			},
-			// some other gecko browser
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Gecko/'
-					}
-				],
-				browser: {
-					engine: 'gecko'
-				}
-			}
-		],
-		os: [
-			// Sailfish
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Sailfish'
-					}
-				],
-				os: {
-					fullName: 'Sailfish OS',
-					name: 'sailfish'
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Windows Phone
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Windows Phone'
-					}
-				],
-				os: {
-					fullName: 'Windows Phone',
-					name: 'winphone',
-					$version: {
-						string: ua,
-						search: 'Windows Phone '
-					}
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Windows
-			{
-				test: [
-					{
-						string: platform,
-						search: 'Win'
-					}
-				],
-				os: {
-					fullName: 'Windows',
-					name: 'win',
-					$version: {
-						string: ua,
-						search: 'Windows NT ',
-						names: {
-							'6.3': '8.1',
-							'6.2': '8',
-							'6.1': '7',
-							'6.0': 'Vista',
-							'5.2': 'Server 2003 / XP x64 Edition',
-							'5.1': 'XP',
-							'5.01': '2000',
-							'5.0': '2000'
-						}
-					}
-				}
-			},
-			// Mac OS X
-			{
-				test: [
-					{
-						string: platform,
-						search: 'Mac'
-					},
-					{
-						string: ua,
-						search: 'OS X 10'
-					}
-				],
-				os: {
-					fullName: 'Mac OS X',
-					name: 'osx',
-					$version: {
-						string: ua,
-						search: /OS X 10(_|\.)/,
-						names: {
-							'6': 'Snow Leopard',
-							'7': 'Lion',
-							'8': 'Mountain Lion',
-							'9': 'Mavericks',
-							'10': 'Yosemite'
-						}
-					}
-				}
-			},
-			// iOS
-			{
-				test: [
-					{
-						string: ua,
-						search: 'iPhone'
-					}
-				],
-				os: {
-					fullName: 'iOS',
-					name: 'ios',
-					$version: {
-						string: ua,
-						search: 'iPhone OS '
-					}
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Android
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Android'
-					}
-				],
-				os: {
-					fullName: 'Android',
-					name: 'android',
-					$version: {
-						string: ua,
-						search: 'Android '
-					}
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// BlackBerry
-			{
-				test: [
-					{
-						string: platform,
-						search: 'BlackBerry'
-					}
-				],
-				os: {
-					fullName: 'BlackBerry',
-					name: 'blackberry',
-					$version: {
-						string: ua,
-						search: 'BB'
-					}
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Symbian
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Symbian'
-					}
-				],
-				os: {
-					fullName: 'Symbian',
-					name: 'symbian'
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Symbian
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Series40'
-					}
-				],
-				os: {
-					fullName: 'Symbian',
-					name: 'symbian'
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Kindle
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Kindle'
-					}
-				],
-				os: {
-					fullName: 'Kindle',
-					name: 'kindle',
-					$version: {
-						string: ua,
-						search: 'Kindle/'
-					}
-				},
-				features: {
-					bw: true,
-					mobile: true
-				}
-			},
-			// PS Vita
-			{
-				test: [
-					{
-						string: ua,
-						search: 'PlayStation Vita'
-					}
-				],
-				os: {
-					fullName: 'PlayStation Vita',
-					name: 'psvita'
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Nintendo DSi
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Nintendo DSi'
-					}
-				],
-				os: {
-					fullName: 'Nintendo DSi',
-					name: 'dsi'
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Nintendo 3DS
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Nintendo 3DS'
-					}
-				],
-				os: {
-					fullName: 'Nintendo 3DS',
-					name: '3ds'
-				},
-				browser: {
-					engine: 'webkit'
-				},
-				features: {
-					mobile: true
-				}
-			},
-			// Viera smart tv
-			{
-				test: [
-					{
-						string: ua,
-						search: 'Viera'
-					}
-				],
-				os: {
-					fullName: 'Viera',
-					name: 'viera'
-				},
-				browser: {
-					engine: 'webkit'
-				},
-				features: {
-					tv: true
-				}
-			},
-			// something linux-based, could be anything
-			{
-				test: [
-					{
-						string: platform,
-						search: 'Linux'
-					}
-				],
-				os: {
-					fullName: 'Linux',
-					name: 'linux'
-				}
-			}
-		],
-		features: [
-			{
-				test: [
-					{
-						string: ua,
-						search: 'mobile'
-					}
-				],
-				features: {
-					mobile: true
-				}
-			}
-		]
-	};
+	//return initial sniff state in case no ua string passed
+	if (!ua) return sniff;
 
 	function init() {
 		for (var i in data) {
@@ -596,8 +416,14 @@ function Sniffer(win) {
 			var test = true;
 
 			for (var j=0; j<obj[i].test.length; j++) {
-				if (!obj[i].test[j].string || !obj[i].test[j].search || obj[i].test[j].string.toLowerCase().indexOf(obj[i].test[j].search.toLowerCase()) == -1) {
-					if (obj[i].test[j].prop === undefined) {
+				if (obj[i].test[j] instanceof RegExp) {
+					if (!obj[i].test[j].test(ua)) {
+						test = false;
+						break;
+					}
+				}
+				else {
+					if (ua.indexOf(obj[i].test[j]) == -1) {
 						test = false;
 						break;
 					}
@@ -615,7 +441,7 @@ function Sniffer(win) {
 		for (var i in data) {
 			if (obj[i]) {
 				if (obj[i].$version) {
-					var version = getVersion(obj[i].$version);
+					var version = getVersion(obj[i].$version.search);
 
 					if (version) {
 						var semverArr = version.split('.');
@@ -638,24 +464,24 @@ function Sniffer(win) {
 		}
 	}
 
-	function getVersion(obj) {
-		var search;
+	function getVersion(search) {
+		var searchString;
 
-		if (obj.search instanceof RegExp) {
-			search = (obj.string.match(obj.search) || [])[0];
+		if (search instanceof RegExp) {
+			searchString = (ua.match(search) || [])[0];
 
-			if (!search) return;
+			if (!searchString) return;
 		}
 		else {
-			search = obj.search;
+			searchString = search;
 		}
 
-		var index = obj.string.indexOf(search),
+		var index = ua.indexOf(searchString),
 			substring;
 
 		if (index == -1) return;
 
-		substring = obj.string.substring(index+search.length);
+		substring = ua.substring(index+searchString.length);
 		regexpResult = /^(\d+\.){0,2}\d+/.exec(substring);
 
 		if (!regexpResult) return;

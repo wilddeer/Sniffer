@@ -1,2 +1,2 @@
 //run Sniffer
-window.Sniff = Sniffer(window);
+window.Sniff = Sniffer(navigator.userAgent);

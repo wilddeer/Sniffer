@@ -101,18 +101,18 @@ No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you
 **OS/Devices:**
 
 - **Windows** *[win]*
-- **Mac** *[mac]*
+- **Mac OS X** *[osx]*
 - **Windows Phone** *[winphone]*
 - **Android** *[android]*
 - **iOS** *[ios]*
-- **Blackberry** *[blackberry]*
-- **Sailfish** *[sailfish]*
+- **BlackBerry** *[blackberry]*
+- **Sailfish OS** *[sailfish]*
 - **Symbian** *[symbian]*
 - **Kindle** *[kindle]* (Kindle Fire should be detected as Android)
 - **PlayStation Vita** *[psvita]*
 - **Nintendo DSi** *[dsi]*
 - **Nintendo 3DS** *[3ds]*
-- **Linux** *[linux]* — actually anything linux-based not from the list above
+- **Viera** *[viera]* (Panasonic Viera smart tv)
 
 **Features:**
 
