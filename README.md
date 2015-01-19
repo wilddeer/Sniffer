@@ -10,7 +10,7 @@ Sniffer is a clientside browser/engine/os/device detection tool.
 
 ###1. Use default sniffer.js build
 
-Drop the script tags in the `<head>`:
+Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). Drop the script tags in the `<head>`:
 
 ```js
 <script src="path/to/sniffer.js"></script>
@@ -46,7 +46,7 @@ html.operamini pre code {
 
 ###2. Use sniffer.pure.js
 
-Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it. Just feed it a user agent string:
+Get *sniffer.pure.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It contains pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it. Just feed it a user agent string:
 
 ```js
 Sniffer(userAgent)
