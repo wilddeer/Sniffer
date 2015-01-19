@@ -13,9 +13,9 @@
                     fullName: '',
                     name: '',
                     version: '',
-                    majorVersion: NaN,
-                    minorVersion: NaN,
-                    patchVersion: NaN,
+                    majorVersion: null,
+                    minorVersion: null,
+                    patchVersion: null,
                     engine: ''
                 },
                 os: {
@@ -23,9 +23,10 @@
                     name: '',
                     version: '',
                     versionName: '',
-                    majorVersion: NaN,
-                    minorVersion: NaN,
-                    patchVersion: NaN,
+                    versionAltNames: [],
+                    majorVersion: null,
+                    minorVersion: null,
+                    patchVersion: null
                 },
                 features: {
                     bw: false,
@@ -238,10 +239,13 @@
                                     '6.2': '8',
                                     '6.1': '7',
                                     '6.0': 'Vista',
-                                    '5.2': 'Server 2003 / XP x64 Edition',
+                                    '5.2': 'XP',
                                     '5.1': 'XP',
                                     '5.01': '2000',
                                     '5.0': '2000'
+                                },
+                                altNames: {
+                                    '5.2': ['Server 2003']
                                 }
                             }
                         }
@@ -254,6 +258,7 @@
                             name: 'osx',
                             $version: {
                                 search: /OS X 10(_|\.)/,
+                                prop: 'majorVersion',
                                 names: {
                                     '6': 'Snow Leopard',
                                     '7': 'Lion',
@@ -275,6 +280,21 @@
                             }
                         },
                         features: {
+                            mobile: true
+                        }
+                    },
+                    // Kindle
+                    {
+                        test: ['Kindle'],
+                        os: {
+                            fullName: 'Kindle',
+                            name: 'kindle',
+                            $version: {
+                                search: 'Kindle/'
+                            }
+                        },
+                        features: {
+                            bw: true,
                             mobile: true
                         }
                     },
@@ -325,21 +345,6 @@
                             name: 'symbian'
                         },
                         features: {
-                            mobile: true
-                        }
-                    },
-                    // Kindle
-                    {
-                        test: ['Kindle'],
-                        os: {
-                            fullName: 'Kindle',
-                            name: 'kindle',
-                            $version: {
-                                search: 'Kindle/'
-                            }
-                        },
-                        features: {
-                            bw: true,
                             mobile: true
                         }
                     },
@@ -448,20 +453,35 @@
     
         function apply(obj) {
             for (var i in data) {
-                if (obj[i]) {
+                if (data.hasOwnProperty(i) && obj[i]) {
                     if (obj[i].$version) {
                         var version = getVersion(obj[i].$version.search);
     
                         if (version) {
-                            var semverArr = version.split('.');
+                            var semverArr = version.split('.'),
+                                versionNames = obj[i].$version.names,
+                                versionAltNames = obj[i].$version.altNames;
     
-                            obj[i].version = version,
-                            obj[i].majorVersion = (semverArr[0]? parseInt(semverArr[0]): NaN);
-                            obj[i].minorVersion = (semverArr[1]? parseInt(semverArr[1]): NaN);
-                            obj[i].patchVersion = (semverArr[2]? parseInt(semverArr[2]): NaN);
+                            obj[i].version = version;
     
-                            if (obj[i].$version.names) {
-                                obj[i].versionName = obj[i].$version.names[version] || '';
+                            if (semverArr[0]) obj[i].majorVersion = parseInt(semverArr[0]);
+                            if (semverArr[1]) obj[i].minorVersion = parseInt(semverArr[1]);
+                            if (semverArr[2]) obj[i].patchVersion = parseInt(semverArr[2]);
+    
+                            if (versionNames) {
+                                var versionName,
+                                    versionNameArr = [];
+    
+                                for (var j = 0; j < semverArr.length; j++) {
+                                    versionNameArr.push(semverArr[j]);
+                                    versionName = versionNameArr.join('.');
+                                    if (versionNames[versionName]) {
+                                        obj[i].versionName = versionNames[versionName];
+                                    }
+                                    if (versionAltNames && versionAltNames[versionName]) {
+                                        obj[i].versionAltNames = versionAltNames[versionName];
+                                    }
+                                }
                             }
                         }
                     }
