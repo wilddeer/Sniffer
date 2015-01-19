@@ -25,7 +25,7 @@ if (Sniff.os.name=='android' &&
 }
 ```
 
-It will also add browser shortcode, browser engine shortcode, OS shortcode and device feature shortcodes to `<thml>` tag’s className, so you can alter the styles accordingly (pretty much the Modernizr way):
+It will also add browser name shortcode, browser engine shortcode, OS name shortcode and device features’ shortcodes to `<thml>` tag’s className, so you can alter the styles accordingly (pretty much the Modernizr way):
 
 ```css
 /* contrast colors for monochrome devices */
