@@ -121,14 +121,14 @@ describe('Desktop browsers', function(){
             it('os alt version name should be Server 2003', function() {
                 result.os.versionAltNames[0].should.equal('Server 2003');
             });
-            it('browser should be not ok', function() {
-                result.browser.name.should.be.not.ok;
+            it('browser should be safari', function() {
+                result.browser.name.should.equal('safari');
             });
             it('engine should be webkit', function() {
                 result.browser.engine.should.equal('webkit');
             });
-            it('browser version should be not ok', function() {
-                result.browser.version.should.be.not.ok;
+            it('browser version should be 4.0.5', function() {
+                result.browser.version.should.equal('4.0.5');
             });
         });
 
@@ -293,20 +293,20 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 6', function() {
-                result.os.version.should.equal('6');
+            it('os version should be 6.8', function() {
+                result.os.version.should.equal('6.8');
             });
             it('os version name should be Snow Leopard', function() {
                 result.os.versionName.should.equal('Snow Leopard');
             });
-            it('browser should be not ok', function() {
-                result.browser.name.should.be.not.ok;
+            it('browser should be safari', function() {
+                result.browser.name.should.equal('safari');
             });
             it('engine should be webkit', function() {
                 result.browser.engine.should.equal('webkit');
             });
-            it('browser version should be not ok', function() {
-                result.browser.version.should.be.not.ok;
+            it('browser version should be 4.0.5', function() {
+                result.browser.version.should.equal('4.0.5');
             });
         });
 
@@ -353,11 +353,363 @@ describe('Desktop browsers', function(){
                 result.browser.version.should.equal('11.11');
             });
         });
+
+        describe('Chrome 20 on Lion', function(){
+            var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+            it('os should be osx', function() {
+                result.os.name.should.equal('osx');
+            });
+            it('os version should be 7.5', function() {
+                result.os.version.should.equal('7.5');
+            });
+            it('os version name should be Lion', function() {
+                result.os.versionName.should.equal('Lion');
+            });
+            it('browser should be chrome', function() {
+                result.browser.name.should.equal('chrome');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 20.0.1132', function() {
+                result.browser.version.should.equal('20.0.1132');
+            });
+        });
+
+        describe('Safari 6.1 on Mountain Lion', function(){
+            var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.71 (KHTML, like Gecko) Version/6.1 Safari/537.71');
+            it('os should be osx', function() {
+                result.os.name.should.equal('osx');
+            });
+            it('os version should be 8.5', function() {
+                result.os.version.should.equal('8.5');
+            });
+            it('os version name should be Mountain Lion', function() {
+                result.os.versionName.should.equal('Mountain Lion');
+            });
+            it('browser should be safari', function() {
+                result.browser.name.should.equal('safari');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 6.1', function() {
+                result.browser.version.should.equal('6.1');
+            });
+        });
+
+        describe('Safari 7 on Mavericks', function(){
+            var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2');
+            it('os should be osx', function() {
+                result.os.name.should.equal('osx');
+            });
+            it('os version should be 9.5', function() {
+                result.os.version.should.equal('9.5');
+            });
+            it('os version name should be Mavericks', function() {
+                result.os.versionName.should.equal('Mavericks');
+            });
+            it('browser should be safari', function() {
+                result.browser.name.should.equal('safari');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 7.0.6', function() {
+                result.browser.version.should.equal('7.0.6');
+            });
+        });
+
+        describe('Opera 27 dev on Yosemite', function(){
+            var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2202.3 Safari/537.36 OPR/27.0.1689.2 (Edition developer)');
+            it('os should be osx', function() {
+                result.os.name.should.equal('osx');
+            });
+            it('os version should be 10.1', function() {
+                result.os.version.should.equal('10.1');
+            });
+            it('os version name should be Yosemite', function() {
+                result.os.versionName.should.equal('Yosemite');
+            });
+            it('browser should be opera', function() {
+                result.browser.name.should.equal('opera');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 27.0.1689', function() {
+                result.browser.version.should.equal('27.0.1689');
+            });
+        });
+
+        describe('Firefox 34 on Yosemite', function(){
+            var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:34.0) Gecko/20100101 Firefox/34.0');
+            it('os should be osx', function() {
+                result.os.name.should.equal('osx');
+            });
+            it('os version should be 10', function() {
+                result.os.version.should.equal('10');
+            });
+            it('os version name should be Yosemite', function() {
+                result.os.versionName.should.equal('Yosemite');
+            });
+            it('browser should be firefox', function() {
+                result.browser.name.should.equal('firefox');
+            });
+            it('engine should be gecko', function() {
+                result.browser.engine.should.equal('gecko');
+            });
+            it('browser version should be 34.0', function() {
+                result.browser.version.should.equal('34.0');
+            });
+        });
     });
 });
 
 
 describe('Devices', function(){
+    describe('Safari on iPod touch', function(){
+        var result = S('Mozilla/5.0 (iPod touch; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B440 Safari/600.1.4');
+        it('os should be ios', function() {
+            result.os.name.should.equal('ios');
+        });
+        it('os version should be 8.1.2', function() {
+            result.os.version.should.equal('8.1.2');
+        });
+        it('browser should be safari', function() {
+            result.browser.name.should.equal('safari');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 8.0', function() {
+            result.browser.version.should.equal('8.0');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Chrome on iPod touch', function(){
+        var result = S('Mozilla/5.0 (iPod; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) CriOS/39.0.2171.50 Mobile/12B440 Safari/600.1.4');
+        it('os should be ios', function() {
+            result.os.name.should.equal('ios');
+        });
+        it('os version should be 8.1.2', function() {
+            result.os.version.should.equal('8.1.2');
+        });
+        it('browser should be crios', function() {
+            result.browser.name.should.equal('crios');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 39.0.2171', function() {
+            result.browser.version.should.equal('39.0.2171');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Opera Coast on iPod touch', function(){
+        var result = S('Mozilla/5.0 (iPod touch; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Coast/4.00.86810 Mobile/12B440 Safari/7534.48.3');
+        it('os should be ios', function() {
+            result.os.name.should.equal('ios');
+        });
+        it('os version should be 8.1.2', function() {
+            result.os.version.should.equal('8.1.2');
+        });
+        it('browser should be coast', function() {
+            result.browser.name.should.equal('coast');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 4.00.86810', function() {
+            result.browser.version.should.equal('4.00.86810');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('IE 11 on Windows Phone 8.1', function(){
+        var result = S('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; Windows Phone 8X by HTC) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537');
+        it('os should be winphone', function() {
+            result.os.name.should.equal('winphone');
+        });
+        it('os version should be 8.1', function() {
+            result.os.version.should.equal('8.1');
+        });
+        it('browser should be ie', function() {
+            result.browser.name.should.equal('ie');
+        });
+        it('engine should be trident', function() {
+            result.browser.engine.should.equal('trident');
+        });
+        it('browser version should be 11.0', function() {
+            result.browser.version.should.equal('11.0');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Android borwser on Android 2.3', function(){
+        var result = S('Mozilla/5.0 (Linux; U; Android 2.3.6; ru-ru; ONE TOUCH 4007D Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be 2.3.6', function() {
+            result.os.version.should.equal('2.3.6');
+        });
+        it('browser should be not ok', function() {
+            result.browser.name.should.be.not.ok;
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be not ok', function() {
+            result.browser.version.should.be.not.ok;
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Android borwser on Android 4.2', function(){
+        var result = S('Mozilla/5.0 (Linux; U; Android 4.2.2; ru-ru; GT-P3100 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be 4.2.2', function() {
+            result.os.version.should.equal('4.2.2');
+        });
+        it('browser should be not ok', function() {
+            result.browser.name.should.be.not.ok;
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be not ok', function() {
+            result.browser.version.should.be.not.ok;
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Chrome 39 on Android 4.2', function(){
+        var result = S('Mozilla/5.0 (Linux; Android 4.2.2; GT-P3100 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Safari/537.36');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be 4.2.2', function() {
+            result.os.version.should.equal('4.2.2');
+        });
+        it('browser should be chrome', function() {
+            result.browser.name.should.equal('chrome');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 39.0.2171', function() {
+            result.browser.version.should.equal('39.0.2171');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Firefox 34 on Android 4.2', function(){
+        var result = S('Mozilla/5.0 (Android; Tablet; rv:34.0) Gecko/34.0 Firefox/34.0');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be not ok', function() {
+            result.os.version.should.be.not.ok;
+        });
+        it('browser should be firefox', function() {
+            result.browser.name.should.equal('firefox');
+        });
+        it('engine should be gecko', function() {
+            result.browser.engine.should.equal('gecko');
+        });
+        it('browser version should be 34.0', function() {
+            result.browser.version.should.equal('34.0');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Opera 24 on Android 4.2', function(){
+        var result = S('Mozilla/5.0 (Linux; Android 4.2.2; GT-P3100 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.117 Safari/537.36 OPR/24.0.1565.82529');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be 4.2.2', function() {
+            result.os.version.should.equal('4.2.2');
+        });
+        it('browser should be opera', function() {
+            result.browser.name.should.equal('opera');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 24.0.1565', function() {
+            result.browser.version.should.equal('24.0.1565');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Opera Classic on Android 4.2', function(){
+        var result = S('Opera/9.80 (Android 4.2.2; Linux; Opera Tablet/ADR-1411061201) Presto/2.11.355 Version/12.10');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be 4.2.2', function() {
+            result.os.version.should.equal('4.2.2');
+        });
+        it('browser should be opera', function() {
+            result.browser.name.should.equal('opera');
+        });
+        it('engine should be presto', function() {
+            result.browser.engine.should.equal('presto');
+        });
+        it('browser version should be 12.10', function() {
+            result.browser.version.should.equal('12.10');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('Opera Mini on Android 4.2', function(){
+        var result = S('Opera/9.80 (Android; Opera Mini/24.0.1565/35.6680; U; ru) Presto/2.8.119 Version/11.10');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be not ok', function() {
+            result.os.version.should.be.not.ok;
+        });
+        it('browser should be operamini', function() {
+            result.browser.name.should.equal('operamini');
+        });
+        it('engine should be presto', function() {
+            result.browser.engine.should.equal('presto');
+        });
+        it('browser version should be 11.10', function() {
+            result.browser.version.should.equal('11.10');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
     describe('Jolla', function(){
         var result = S('Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Mobile; rv:31.0) Gecko/31.0 Firefox/31.0 SailfishBrowser/1.0');
         it('os should be sailfish', function() {
@@ -371,6 +723,9 @@ describe('Devices', function(){
         });
         it('browser version should be 1.0', function() {
             result.browser.version.should.equal('1.0');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
         });
     });
 
@@ -526,6 +881,38 @@ describe('Devices', function(){
         });
         it('should be proxy', function() {
             result.features.proxy.should.be.true;
+        });
+    });
+});
+
+describe('Features', function(){
+    describe('Mobile', function(){
+        it('Mobile should match mobile', function() {
+            var result = S('Mobile');
+            result.features.mobile.should.be.true;
+        });
+        it('mobile should match mobile', function() {
+            var result = S('mobile');
+            result.features.mobile.should.be.true;
+        });
+        it('MOBILE should match mobile', function() {
+            var result = S('MOBILE');
+            result.features.mobile.should.be.true;
+        });
+    });
+
+    describe('TV', function(){
+        it('smarttv should match tv', function() {
+            var result = S('smarttv');
+            result.features.tv.should.be.true;
+        });
+        it('SMART-TV should match tv', function() {
+            var result = S('SMART-TV');
+            result.features.tv.should.be.true;
+        });
+        it('Smart-TV should match tv', function() {
+            var result = S('Smart-TV');
+            result.features.tv.should.be.true;
         });
     });
 });
