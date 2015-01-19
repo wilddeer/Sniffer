@@ -1,31 +1,46 @@
 #Sniffer
 
-##&rsquo;cause if you can&rsquo;t detect it, you should sniff it!
+Sniffer is a clientside browser/engine/os/device detection tool.
 
-Sniffer is a clientside browser/engine/os/device detection tool
+You have two options:
 
-> -- Why you no feature-detect??/?//
+##1. Use default sniffer.js build
 
-I feature-detect like a boss. But when I can't, I use dirty hacks to help me out.
-
-- Some features are just undetectable. For instance, `overflow: scroll` behavior on mobile devices is one of them. Use da Sniffer!
-- You have to sniff [false-positive & false-negative detects](https://docs.google.com/spreadsheet/ccc?key=0AjA1cIs8C8MGdFdyQ0lMQnhMbHJEeVZpMW9XejhzU2c&usp=sharing) (my mobile browsers tests there).
-- You want to support those two idiots coming to your site from Kindle? I do! Make 'em happy with contrast colors and disabled animations.
-
-##Get it
-
-- **sniffer.js** – full dev script
-- **sniffer.min.js** – minified production script
-
-##Use it
-
-Just put it in the `<head>`, like so :
+Drop the script tags in the `<head>`:
 
 ```js
 <script src="path/to/sniffer.js"></script>
 ```
 
-That's it. Now you'll have `Sniff` object in your global scope:
+It will run automatically, collect information on current device/os/browser and put it in `window.Sniff` object (see “Detection results”).
+
+It will also add browser name, browser engine name, OS name and device features to `<thml>` tag className, so you can alter the styles accordingly:
+
+```css
+/* contrast colors for monochrome devices */
+html.bw body {
+	color: black;
+	background: white;
+}
+
+/* fu, ovi! */
+html.ovi body {
+	color: red;
+	background: green;
+}
+```
+
+2. Use sniffer.pure.js
+
+Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it. Just feed it with user agent string:
+
+```js
+Sniffer(userAgent)
+```
+
+It will return detection result, which will look like this &darr; 
+
+##Detection results
 
 ```js
 {
@@ -50,29 +65,11 @@ That's it. Now you'll have `Sniff` object in your global scope:
 	},
 	features: {
 		bw: Boolean, /* black and white (e-book readers) */
-		mobile: Boolean,
-		tv: Boolean,
+		mobile: Boolean, /* includes phones, tablets, e-book readers, portable game consoles, etc. */
+		tv: Boolean, /* smart tv */
 		proxy: Boolean /* serverside js & rendering, like in Opera Mini */
 	}
 };
-```
-
-If Sniffer can't detect something, it will leave empty string for strings or `null` for numbers.
-	
-You'll also have browser name, browser engine name, OS name and device features as classes in `<thml>` tag. Use them to vary the styles:
-
-```css
-html.bw body {
-	color: black;
-	background: white;
-}
-
-/* fu, ovi! */
-html.ovi body {
-	color: red;
-	background: green;
-}
-
 ```
 
 ##Detects
