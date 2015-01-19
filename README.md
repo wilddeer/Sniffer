@@ -14,7 +14,7 @@ Drop the script tags in the `<head>`:
 
 It will run automatically, collect information on current device/os/browser and put it in `window.Sniff` object (see [“Detection results”](#detection-results)).
 
-It will also add browser name, browser engine name, OS name and device features to `<thml>` tag className, so you can alter the styles accordingly:
+It will also add browser name, browser engine name, OS name and device features to `<thml>` tag's className, so you can alter the styles accordingly:
 
 ```css
 /* contrast colors for monochrome devices */
