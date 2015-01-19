@@ -43,9 +43,10 @@ That's it. Now you'll have `Sniff` object in your global scope:
 		name: String, // shortcode
 		version: String, // semantic version, up to three parts (major.minor.patch)
 		versionName: String, // human readable version name, e.g. 'Vista', 'Mavericks', etc.
+		versionAltNames: Array, // possible alternatives, e.g. Windows NT 5.2 can be 'XP' or 'Server 2003'
 		majorVersion: Number,
 		minorVersion: Number,
-		patchVersion: Number,
+		patchVersion: Number
 	},
 	features: {
 		bw: Boolean, /* black and white (e-book readers) */
@@ -56,7 +57,7 @@ That's it. Now you'll have `Sniff` object in your global scope:
 };
 ```
 
-If Sniffer can't detect something, it will leave empty string for strings or `NaN` for numbers.
+If Sniffer can't detect something, it will leave empty string for strings or `null` for numbers.
 	
 You'll also have browser name, browser engine name, OS name and device features as classes in `<thml>` tag. Use them to vary the styles:
 
