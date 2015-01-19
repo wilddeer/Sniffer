@@ -84,13 +84,13 @@ Class names/shortcodes in square brackets.
 - **Chrome** *[chrome]*
 - **Firefox** *[firefox]*
 - **IE** *[ie]*
+- **Safari** *[safari]*
 - **Opera** *[opera]*
 - **Opera Mini** *[operamini]*
+- **Opera Coast** *[coast]*
 - **Nokia Browser** *[nokiabrowser]* (!= Nokia Xpress) — Symbian Belle phones
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
 - **Sailfish Browser** *[sailfishbrowser]*
-
-No Safari, &rsquo;cause there is no reliable way to detect it. No, srsly. If you desperately want a Safari test, try `Sniff.browser.name === '' && Sniff.browser.engine == 'webkit'`. Lots of other webkits will pass this test, though.
 
 **Engines:**
 
@@ -130,13 +130,6 @@ Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how t
 
 - **sniffer.pure.js** – full dev script
 - **sniffer.pure.min.js** – minified production script
-
-###Exposed
-
-Default script + Sniffer function in global scope.
-
-- **sniffer.exposed.js** – full dev script
-- **sniffer.exposed.min.js** – minified production script
 
 ##License
 
