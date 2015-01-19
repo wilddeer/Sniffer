@@ -79,7 +79,7 @@ It will return detection result, which will look like this &darr;
 		tv: Boolean, /* smart tv */
 		proxy: Boolean /* serverside js & rendering, like in Opera Mini */
 	}
-};
+}
 ```
 
 ##Detects
