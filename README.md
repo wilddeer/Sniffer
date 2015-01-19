@@ -2,6 +2,10 @@
 
 Sniffer is a clientside browser/engine/os/device detection tool.
 
+[Test your browser](http://wilddeer.github.io/Sniffer/test/)
+
+[Test suite](http://wilddeer.github.io/Sniffer/test/mocha.htm)
+
 ##You have two options:
 
 ###1. Use default sniffer.js build
