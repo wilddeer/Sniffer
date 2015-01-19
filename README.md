@@ -127,7 +127,7 @@ Class names/shortcodes in square brackets.
 - **Black and white** *[bw]*
 - **Mobile** *[mobile]*
 - **TV** *[tv]*
-- **Proxy broswer (serverside rendering)** *[proxy]*
+- **Proxy broswer** (serverside rendering) *[proxy]*
 
 ##License
 
