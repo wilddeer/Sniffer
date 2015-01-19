@@ -183,6 +183,42 @@ function Sniffer(ua) {
                         proxy: true
                     }
                 },
+                // iOS Chrome
+                {
+                    test: ['CriOS/'],
+                    browser: {
+                        fullName: 'iOS Chrome',
+                        name: 'crios',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'CriOS/'
+                        }
+                    }
+                },
+                // Opera Coast
+                {
+                    test: ['Coast/'],
+                    browser: {
+                        fullName: 'Opera Coast',
+                        name: 'coast',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'Coast/'
+                        }
+                    }
+                },
+                // Safari
+                {
+                    test: ['Safari', 'Version/', /(iPhone OS|Macintosh|Windows)/],
+                    browser: {
+                        fullName: 'Safari',
+                        name: 'safari',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'Version/'
+                        }
+                    }
+                },
                 // some other webkit browser
                 {
                     test: ['WebKit'],
@@ -410,6 +446,12 @@ function Sniffer(ua) {
                     features: {
                         mobile: true
                     }
+                },
+                {
+                    test: [/smart-{0,1}tv/i],
+                    features: {
+                        tv: true
+                    }
                 }
             ]
         };
@@ -509,11 +551,11 @@ function Sniffer(ua) {
         if (index == -1) return;
 
         substring = ua.substring(index+searchString.length);
-        regexpResult = /^(\d+\.){0,2}\d+/.exec(substring);
+        regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
 
         if (!regexpResult) return;
 
-        return regexpResult[0];
+        return regexpResult[0].replace(/_/g, '.');
     }
 
     init();
