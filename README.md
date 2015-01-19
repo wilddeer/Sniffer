@@ -12,10 +12,17 @@ Drop the script tags in the `<head>`:
 <script src="path/to/sniffer.js"></script>
 ```
 
-It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (see [“Detection results”](#detection-results)). Now you can do something like this:
+It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (see [“Detection results”](#detection-results)). Now you can do something horrible like this:
 
 ```js
-if (Sniff.os.name=='android' && Sniff.os.majorVersion < 3 && Sniff.browser.engine=='webkit') myMagicOverflowScrollPolyfill();
+if (Sniff.os.name=='android' &&
+	Sniff.os.majorVersion &&
+	Sniff.os.majorVersion < 3 &&
+	!Sniff.browser.name &&
+	Sniff.browser.engine=='webkit') {
+		//looks like default Android borwser!
+		myMagicOverflowScrollPolyfill();
+}
 ```
 
 It will also add browser name, browser engine name, OS name and device features to `<thml>` tag’s className, so you can alter the styles accordingly (pretty much the Modernizr way):
