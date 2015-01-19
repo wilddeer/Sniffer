@@ -12,7 +12,7 @@ Drop the script tags in the `<head>`:
 <script src="path/to/sniffer.js"></script>
 ```
 
-It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (see [“Detection results”](#detection-results)). Now you can do something horrible things:
+It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (see [“Detection results”](#detection-results)). Now you can do horrible things:
 
 ```js
 if (Sniff.os.name=='android' &&
