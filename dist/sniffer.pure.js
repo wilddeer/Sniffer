@@ -187,8 +187,8 @@ function Sniffer(ua) {
                 {
                     test: ['CriOS/'],
                     browser: {
-                        fullName: 'iOS Chrome',
-                        name: 'crios',
+                        fullName: 'Chrome',
+                        name: 'chrome',
                         engine: 'webkit',
                         $version: {
                             search: 'CriOS/'

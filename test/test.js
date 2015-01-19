@@ -498,8 +498,8 @@ describe('Devices', function(){
         it('os version should be 8.1.2', function() {
             result.os.version.should.equal('8.1.2');
         });
-        it('browser should be crios', function() {
-            result.browser.name.should.equal('crios');
+        it('browser should be chrome', function() {
+            result.browser.name.should.equal('chrome');
         });
         it('engine should be webkit', function() {
             result.browser.engine.should.equal('webkit');
