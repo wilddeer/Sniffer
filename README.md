@@ -12,7 +12,7 @@ Drop the script tags in the `<head>`:
 <script src="path/to/sniffer.js"></script>
 ```
 
-It will run automatically, collect information on current device/os/browser and put it in `window.Sniff` object (see “Detection results”).
+It will run automatically, collect information on current device/os/browser and put it in `window.Sniff` object (see [“Detection results”](#detection-results)).
 
 It will also add browser name, browser engine name, OS name and device features to `<thml>` tag className, so you can alter the styles accordingly:
 
@@ -30,7 +30,7 @@ html.ovi body {
 }
 ```
 
-2. Use sniffer.pure.js
+##2. Use sniffer.pure.js
 
 Pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it. Just feed it with user agent string:
 
