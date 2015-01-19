@@ -20,7 +20,7 @@ if (Sniff.os.name=='android' &&
 	Sniff.os.majorVersion < 3 &&
 	!Sniff.browser.name &&
 	Sniff.browser.engine=='webkit') {
-		//looks like default Android borwser!
+		//looks like default Android 2.x borwser!
 		myMagicOverflowScrollPolyfill();
 }
 ```
