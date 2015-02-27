@@ -534,6 +534,28 @@ describe('Devices', function(){
         });
     });
 
+    describe('Safari on iPad', function(){
+        var result = S('Mozilla/5.0 (iPad; CPU OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B554a Safari/9537.53');
+        it('os should be ios', function() {
+            result.os.name.should.equal('ios');
+        });
+        it('os version should be 7.0.4', function() {
+            result.os.version.should.equal('7.0.4');
+        });
+        it('browser should be safari', function() {
+            result.browser.name.should.equal('safari');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 7.0', function() {
+            result.browser.version.should.equal('7.0');
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
     describe('IE 11 on Windows Phone 8.1', function(){
         var result = S('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; Windows Phone 8X by HTC) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537');
         it('os should be winphone', function() {
