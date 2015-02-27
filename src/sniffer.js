@@ -202,7 +202,7 @@ function Sniffer(ua) {
                 },
                 // Safari
                 {
-                    test: ['Safari', 'Version/', /(iPhone OS|Macintosh|Windows)/],
+                    test: ['Safari', 'Version/', /(iPhone|iPod|iPad|Macintosh|Windows)/],
                     browser: {
                         fullName: 'Safari',
                         name: 'safari',
@@ -298,12 +298,12 @@ function Sniffer(ua) {
                 },
                 // iOS
                 {
-                    test: ['iPhone'],
+                    test: [/iPhone|iPod|iPad/],
                     os: {
                         fullName: 'iOS',
                         name: 'ios',
                         $version: {
-                            search: 'iPhone OS '
+                            search: 'OS '
                         }
                     },
                     features: {
