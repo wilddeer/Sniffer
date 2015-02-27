@@ -578,6 +578,28 @@ describe('Devices', function(){
         });
     });
 
+    describe('Android borwser on Android 3.2', function(){
+        var result = S('Mozilla/5.0 (Linux; U; Android 3.2.1; ru-ru; ARCHOS 70it2 Build/HTK75D) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13');
+        it('os should be android', function() {
+            result.os.name.should.equal('android');
+        });
+        it('os version should be 3.2.1', function() {
+            result.os.version.should.equal('3.2.1');
+        });
+        it('browser should be not ok', function() {
+            result.browser.name.should.be.not.ok;
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be not ok', function() {
+            result.browser.version.should.be.not.ok;
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
     describe('Android borwser on Android 4.2', function(){
         var result = S('Mozilla/5.0 (Linux; U; Android 4.2.2; ru-ru; GT-P3100 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30');
         it('os should be android', function() {
