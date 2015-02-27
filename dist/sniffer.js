@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 2.0.0 | https://github.com/wilddeer/Sniffer
+ * v. 2.0.1 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -211,7 +211,7 @@
                     },
                     // Safari
                     {
-                        test: ['Safari', 'Version/', /(iPhone OS|Macintosh|Windows)/],
+                        test: ['Safari', 'Version/', /(iPhone|iPod|iPad|Macintosh|Windows)/],
                         browser: {
                             fullName: 'Safari',
                             name: 'safari',
@@ -307,12 +307,12 @@
                     },
                     // iOS
                     {
-                        test: ['iPhone'],
+                        test: [/iPhone|iPod|iPad/],
                         os: {
                             fullName: 'iOS',
                             name: 'ios',
                             $version: {
-                                search: 'iPhone OS '
+                                search: 'OS '
                             }
                         },
                         features: {
