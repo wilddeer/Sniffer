@@ -15,11 +15,17 @@ module.exports = function(grunt) {
                 src: ['src/sniffer.js'],
                 dest: 'dist/sniffer.pure.js',
             },
+            'module': {
+                src: [
+                    'src/sniffer.js',
+                    'src/expose.js'
+                ],
+                dest: 'dist/sniffer.module.js',
+            },
             'default': {
                 src: [
                     'src/sniffer.js',
-                    'src/run.js',
-                    'src/classes.js'
+                    'src/run.js'
                 ],
                 dest: 'dist/sniffer.js',
             }
@@ -27,10 +33,16 @@ module.exports = function(grunt) {
 
         wrap: {
             options: {
-                wrapper: ['<%= banner %>\n(function() {', '})();'],
+                wrapper: ['<%= banner %>\n;(function(global) {', '})(this);'],
                 indent: '    '
             },
-            dist: {
+            'module': {
+                src: [
+                    'dist/sniffer.module.js'
+                ],
+                dest: ''
+            },
+            'default': {
                 src: [
                     'dist/sniffer.js'
                 ],
@@ -42,7 +54,7 @@ module.exports = function(grunt) {
             options: {
                 banner: '<%= banner %>'
             },
-            dist: {
+            'dist': {
                 files: [{
                     expand: true,
                     src: '*.js',
@@ -66,12 +78,8 @@ module.exports = function(grunt) {
             js: {
                 files: ['src/*.js', 'package.json'],
                 tasks: ['build'],
-            },
-            docs: {
-                files: ['src/doc/**'],
-                tasks: ['mustache_render'],
             }
-        },
+        }
     });
 
     // build

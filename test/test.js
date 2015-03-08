@@ -1,5 +1,16 @@
-var S = Sniffer,
-    expect = chai.expect;
+;(function(global) {
+
+
+if (typeof(require) != 'undefined') {
+    var chai = require('./chai.js'),
+        S = require('../dist/sniffer.module.js');
+}
+else {
+    var chai = global.chai,
+        S = global.Sniffer;
+}
+
+var expect = chai.expect;
 
 chai.should();
 
@@ -976,3 +987,6 @@ describe('Features', function(){
         });
     });
 });
+
+
+})(this);

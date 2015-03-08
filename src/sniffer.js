@@ -1,4 +1,4 @@
-function Sniffer(ua) {
+var Sniffer = function(ua) {
     var sniff = {
             browser: {
                 fullName: '',
@@ -568,4 +568,4 @@ function Sniffer(ua) {
     init();
 
     return sniff;
-}
+};
