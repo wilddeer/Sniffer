@@ -3,7 +3,7 @@
 
 if (typeof(require) != 'undefined') {
     var chai = require('./chai.js'),
-        S = require('../dist/sniffer.module.js');
+        S = require('../');
 }
 else {
     var chai = global.chai,
