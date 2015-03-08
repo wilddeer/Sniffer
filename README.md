@@ -124,6 +124,7 @@ Class names/shortcodes in square brackets.
 - **PlayStation Vita** *[psvita]*
 - **Nintendo DSi** *[dsi]*
 - **Nintendo 3DS** *[3ds]*
+- **New Nintendo 3DS** *[n3ds]*
 - **Viera** *[viera]* (Panasonic Viera smart tv)
 
 **Features:**
