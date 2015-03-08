@@ -54,6 +54,8 @@ Sniffer(userAgent);
 
 It will return detection result, see [“Detection results”](#detection-results) for details.
 
+Also available via npm: `npm install snifferjs`.
+
 ###3. Pure Sniffer function
 
 Get *sniffer.pure.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It contains pure Sniffer function (no wrap, no autolaunch, no css classes, no exports), you decide how to use it.
