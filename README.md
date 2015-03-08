@@ -8,7 +8,7 @@ Sniffer is a browser/engine/os/device detection tool. Works both in browser and 
 
 ##You have three options:
 
-###1. Default sniffer.js build
+###1. Default Sniffer build
 
 Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). Drop the script tag in the `<head>`:
 
@@ -16,7 +16,7 @@ Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/di
 <script src="path/to/sniffer.js"></script>
 ```
 
-It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (or expose it via `module.exports`, if available). See [“Detection results”](#detection-results) for details. Now you can do horrible things:
+It will run automatically, collect the information on current device/os/browser and put the results in `window.Sniff` object (or expose it via `module.exports`, if available). See [“Detection results”](#detection-results) for details. Now you can do horrible things:
 
 ```js
 if (Sniff.os.name=='android' &&
