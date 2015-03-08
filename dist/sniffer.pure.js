@@ -1,11 +1,11 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 2.1.0 | https://github.com/wilddeer/Sniffer
+ * v. 2.2.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
  */
-function Sniffer(ua) {
+var Sniffer = function(ua) {
     var sniff = {
             browser: {
                 fullName: '',
@@ -575,4 +575,4 @@ function Sniffer(ua) {
     init();
 
     return sniff;
-}
+};
