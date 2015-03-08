@@ -808,6 +808,22 @@ describe('Devices', function(){
         });
     });
 
+    describe('New Nintendo 3DS', function(){
+        var result = S('Mozilla/5.0 (New Nintendo 3DS like iPhone) AppleWebKit/536.30 (KHTML, like Gecko) NX/3.0.0.5.10 Mobile NintendoBrowser/1.1.9996.EU');
+        it('os should be n3ds', function() {
+            result.os.name.should.equal('n3ds');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be not ok', function() {
+            result.browser.version.should.be.not.ok;
+        });
+        it('should be mobile', function() {
+            result.features.mobile.should.be.true;
+        });
+    });
+
     describe('Nintendo 3DS', function(){
         var result = S('Mozilla/5.0 (Nintendo 3DS; U; ; ru) Version/1.7552.EU');
         it('os should be 3ds', function() {

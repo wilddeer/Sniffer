@@ -296,20 +296,6 @@ function Sniffer(ua) {
                         }
                     }
                 },
-                // iOS
-                {
-                    test: [/iPhone|iPod|iPad/],
-                    os: {
-                        fullName: 'iOS',
-                        name: 'ios',
-                        $version: {
-                            search: 'OS '
-                        }
-                    },
-                    features: {
-                        mobile: true
-                    }
-                },
                 // Kindle
                 {
                     test: ['Kindle'],
@@ -322,20 +308,6 @@ function Sniffer(ua) {
                     },
                     features: {
                         bw: true,
-                        mobile: true
-                    }
-                },
-                // Android
-                {
-                    test: ['Android'],
-                    os: {
-                        fullName: 'Android',
-                        name: 'android',
-                        $version: {
-                            search: 'Android '
-                        }
-                    },
-                    features: {
                         mobile: true
                     }
                 },
@@ -397,6 +369,20 @@ function Sniffer(ua) {
                         mobile: true
                     }
                 },
+                // New Nintendo 3DS
+                {
+                    test: ['New Nintendo 3DS'],
+                    os: {
+                        fullName: 'New Nintendo 3DS',
+                        name: 'n3ds'
+                    },
+                    browser: {
+                        engine: 'webkit'
+                    },
+                    features: {
+                        mobile: true
+                    }
+                },
                 // Nintendo 3DS
                 {
                     test: ['Nintendo 3DS'],
@@ -430,6 +416,34 @@ function Sniffer(ua) {
                     test: ['SonyDTV'],
                     features: {
                         tv: true
+                    }
+                },
+                // Android
+                {
+                    test: ['Android'],
+                    os: {
+                        fullName: 'Android',
+                        name: 'android',
+                        $version: {
+                            search: 'Android '
+                        }
+                    },
+                    features: {
+                        mobile: true
+                    }
+                },
+                // iOS
+                {
+                    test: [/iPhone|iPod|iPad/],
+                    os: {
+                        fullName: 'iOS',
+                        name: 'ios',
+                        $version: {
+                            search: 'OS '
+                        }
+                    },
+                    features: {
+                        mobile: true
                     }
                 }
             ],
