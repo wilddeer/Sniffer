@@ -1,14 +1,14 @@
 #Sniffer
 
-Sniffer is a clientside browser/engine/os/device detection tool.
+Sniffer is a browser/engine/os/device detection tool. Works both in browser and Node.
 
-[Test your browser](http://wilddeer.github.io/Sniffer/test/)
+[Live demo](http://wilddeer.github.io/Sniffer/test/demo.htm) (tests your browser UA string)
 
-[Test suite](http://wilddeer.github.io/Sniffer/test/mocha.htm)
+[Test suite](http://wilddeer.github.io/Sniffer/test/test.htm)
 
-##You have two options:
+##You have three options:
 
-###1. Use default sniffer.js build
+###1. Default sniffer.js build
 
 Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). Drop the script tags in the `<head>`:
 
@@ -16,7 +16,7 @@ Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/di
 <script src="path/to/sniffer.js"></script>
 ```
 
-It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (see [“Detection results”](#detection-results)). Now you can do horrible things:
+It will run automatically, collect the information on current device/os/browser and put the result in `window.Sniff` object (or expose it via `module.exports`, if available). See [“Detection results”](#detection-results) for details. Now you can do horrible things:
 
 ```js
 if (Sniff.os.name=='android' &&
@@ -44,17 +44,23 @@ html.operamini pre code {
 }
 ```
 
-###2. Use sniffer.pure.js
+###2. Sniffer module
 
-Get *sniffer.pure.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It contains pure Sniffer function (no wrap, no autolaunch, no css classes), you decide how to use it. Just feed it a user agent string:
+Get *sniffer.module.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It exposes Sniffer function into global scope or via `module.exports`, if available. Compatible with Node. Just feed it a user agent string:
 
 ```js
-Sniffer(userAgent)
+Sniffer(userAgent);
 ```
 
-It will return detection result, which will look like this &darr; 
+It will return detection result, see [“Detection results”](#detection-results) for details.
+
+###3. Pure Sniffer function
+
+Get *sniffer.pure.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It contains pure Sniffer function (no wrap, no autolaunch, no css classes, no exports), you decide how to use it.
 
 ##Detection results
+
+Sniffer returns an object which looks like this:
 
 ```js
 {
