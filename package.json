@@ -1,5 +1,5 @@
 {
-  "name": "Sniffer",
+  "name": "snifferjs",
   "version": "2.2.0",
   "description": "Browser/engine/os/device detection tool",
   "keywords": [
