@@ -10,7 +10,7 @@ Sniffer is a browser/engine/os/device detection tool. Works both in browser and 
 
 ###1. Default sniffer.js build
 
-Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). Drop the script tags in the `<head>`:
+Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). Drop the script tag in the `<head>`:
 
 ```js
 <script src="path/to/sniffer.js"></script>
