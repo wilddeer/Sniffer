@@ -1,4 +1,4 @@
-#Sniffer
+# Sniffer
 
 Sniffer is a browser/engine/os/device detection tool. Works both in browser and Node.
 
@@ -6,9 +6,9 @@ Sniffer is a browser/engine/os/device detection tool. Works both in browser and 
 
 [Test suite](http://wilddeer.github.io/Sniffer/test/test.htm)
 
-##You have three options:
+## You have three options:
 
-###1. Default Sniffer build
+### 1. Default Sniffer build
 
 Get *sniffer.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). Drop the script tag in the `<head>`:
 
@@ -44,7 +44,7 @@ html.operamini pre code {
 }
 ```
 
-###2. Sniffer module
+### 2. Sniffer module
 
 Get *sniffer.module.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It exposes Sniffer function into global scope or via `module.exports`, if available. Compatible with Node. Just feed it a user agent string:
 
@@ -56,11 +56,11 @@ It will return detection result, see [“Detection results”](#detection-result
 
 Also available via npm: `npm install snifferjs`.
 
-###3. Pure Sniffer function
+### 3. Pure Sniffer function
 
 Get *sniffer.pure.js* from [dist/](https://github.com/wilddeer/Sniffer/tree/master/dist). It contains pure Sniffer function (no wrap, no autolaunch, no css classes, no exports), you decide how to use it.
 
-##Detection results
+## Detection results
 
 Sniffer returns an object which looks like this:
 
@@ -94,7 +94,7 @@ Sniffer returns an object which looks like this:
 }
 ```
 
-##Detects
+## Detects
 
 Class names/shortcodes in square brackets.
 
@@ -142,7 +142,7 @@ Class names/shortcodes in square brackets.
 - **TV** *[tv]*
 - **Proxy broswer** (serverside rendering) *[proxy]*
 
-##License
+## License
 
 [MIT license](http://opensource.org/licenses/MIT).
 
