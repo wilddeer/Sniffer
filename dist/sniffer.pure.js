@@ -303,6 +303,17 @@ var Sniffer = function(ua) {
                         }
                     }
                 },
+                // Ubuntu
+                {
+                    test: ['Ubuntu'],
+                    os: {
+                        fullName: 'Ubuntu',
+                        name: 'ubuntu',
+                        $version: {
+                            search: 'Ubuntu'
+                        }
+                    }
+                },
                 // Kindle
                 {
                     test: ['Kindle'],
@@ -476,7 +487,7 @@ var Sniffer = function(ua) {
     function init() {
         for (var i in data) {
             test(data[i]);
-        };
+        }
     }
 
     function test(obj) {

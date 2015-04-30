@@ -475,6 +475,52 @@ describe('Desktop browsers', function(){
             });
         });
     });
+
+    describe('Ubuntu Desktop', function () {
+        describe('Firefox 35 on Ubuntu Desktop', function () {
+            var result = S('Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0');
+            it('os should be ubuntu', function() {
+               result.os.name.should.equal('ubuntu');
+            });
+            it('os version should be blank', function() {
+               result.os.version.should.equal('');
+            });
+            it('os version name should be blank', function() {
+               result.os.versionName.should.equal('');
+            });
+            it('browser should be firefox', function() {
+               result.browser.name.should.equal('firefox');
+            });
+            it('engine should be gecko', function() {
+               result.browser.engine.should.equal('gecko');
+            });
+            it('browser version should be 35.0', function() {
+               result.browser.version.should.equal('35.0');
+            });
+        });
+        describe('Chromium 40 on Ubuntu Desktop', function(){
+            var result = S('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/40.0.2214.111 Chrome/40.0.2214.111 Safari/537.36');
+            it('os should be ubuntu', function() {
+                result.os.name.should.equal('ubuntu');
+            });
+            it('os version should be blank', function() {
+                result.os.version.should.equal('');
+            });
+            it('os version name should be blank', function() {
+                result.os.versionName.should.equal('');
+            });
+            it('browser should be chrome', function() {
+                result.browser.name.should.equal('chrome');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 40.0.2214', function() {
+                result.browser.version.should.equal('40.0.2214');
+            });
+        });
+
+    });
 });
 
 
