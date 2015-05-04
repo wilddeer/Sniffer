@@ -309,8 +309,33 @@ var Sniffer = function(ua) {
                     os: {
                         fullName: 'Ubuntu',
                         name: 'ubuntu',
+                    }
+                },
+                // Fedora
+                {
+                    test: ['Fedora'],
+                    os: {
+                        fullName: 'Fedora Linux',
+                        name: 'fedora',
                         $version: {
-                            search: 'Ubuntu'
+                            search: /Fedora\//,
+                            prop: 'majorVersion',
+                            names: {
+                                '20':'Heisenbug',
+                                '19': "Schrödinger's Cat",
+                                '18': 'Spherical Cow',
+                                '17': 'Beefy Miracle',
+                                '16': 'Verne',
+                                '15': 'Lovelock',
+                                '14': 'Laughlin',
+                                '13': 'Goddard',
+                                '12': 'Constantine',
+                                '11': 'Leonidas',
+                                '10': 'Cambridge',
+                                '9': 'Sulphur',
+                                '8': 'Werewolf',
+                                '7': 'Moonshine',
+                            }
                         }
                     }
                 },
