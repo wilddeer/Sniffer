@@ -1,6 +1,6 @@
 # Sniffer
 
-Sniffer is a browser/engine/os/device detection tool. Works both in browser and Node.
+Sniffer is a browser/engine/os/device detection tool. Works both in a browser and with Node.
 
 [Live demo](http://wilddeer.github.io/Sniffer/test/demo.htm) (tests your browser UA string)
 
