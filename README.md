@@ -122,6 +122,8 @@ Class names/shortcodes in square brackets.
 
 - **Windows** *[win]*
 - **Mac OS X** *[osx]*
+- **Ubuntu** *[ubuntu]*
+- **Fedora** *[fedora]*
 - **Windows Phone** *[winphone]*
 - **Android** *[android]*
 - **iOS** *[ios]*

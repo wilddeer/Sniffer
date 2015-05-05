@@ -475,6 +475,138 @@ describe('Desktop browsers', function(){
             });
         });
     });
+
+    describe('Ubuntu Linux Desktop', function () {
+        describe('Firefox 35 on Ubuntu Desktop', function () {
+            var result = S('Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0');
+            it('os should be ubuntu', function() {
+               result.os.name.should.equal('ubuntu');
+            });
+            it('os version should be blank', function() {
+               result.os.version.should.equal('');
+            });
+            it('os version name should be blank', function() {
+               result.os.versionName.should.equal('');
+            });
+            it('browser should be firefox', function() {
+               result.browser.name.should.equal('firefox');
+            });
+            it('engine should be gecko', function() {
+               result.browser.engine.should.equal('gecko');
+            });
+            it('browser version should be 35.0', function() {
+               result.browser.version.should.equal('35.0');
+            });
+        });
+        describe('Chromium 40 on Ubuntu Desktop', function(){
+            var result = S('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/40.0.2214.111 Chrome/40.0.2214.111 Safari/537.36');
+            it('os should be ubuntu', function() {
+                result.os.name.should.equal('ubuntu');
+            });
+            it('os version should be blank', function() {
+                result.os.version.should.equal('');
+            });
+            it('os version name should be blank', function() {
+                result.os.versionName.should.equal('');
+            });
+            it('browser should be chrome', function() {
+                result.browser.name.should.equal('chrome');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 40.0.2214', function() {
+                result.browser.version.should.equal('40.0.2214');
+            });
+        });
+    });
+
+    describe('Fedora Linux Desktop', function () {
+        describe('Firefox 37 on Fedora Linux Desktop', function () {
+            var result = S('Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0');
+            it('os should be fedora', function() {
+               result.os.name.should.equal('fedora');
+            });
+            it('os version should be blank', function() {
+               result.os.version.should.equal('');
+            });
+            it('os version name should be blank', function() {
+               result.os.versionName.should.equal('');
+            });
+            it('browser should be firefox', function() {
+               result.browser.name.should.equal('firefox');
+            });
+            it('engine should be gecko', function() {
+               result.browser.engine.should.equal('gecko');
+            });
+            it('browser version should be 37.0', function() {
+               result.browser.version.should.equal('37.0');
+            });
+        });
+        describe('Firefox 36 on Fedora Linux Desktop', function () {
+            var result = S('Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0');
+            it('os should be fedora', function() {
+               result.os.name.should.equal('fedora');
+            });
+            it('os version should be blank', function() {
+               result.os.version.should.equal('');
+            });
+            it('os version name should be blank', function() {
+               result.os.versionName.should.equal('');
+            });
+            it('browser should be firefox', function() {
+               result.browser.name.should.equal('firefox');
+            });
+            it('engine should be gecko', function() {
+               result.browser.engine.should.equal('gecko');
+            });
+            it('browser version should be 36.0', function() {
+               result.browser.version.should.equal('36.0');
+            });
+        });
+        describe('Chromium 40 on Fedora Linux Desktop', function(){
+            var result = S('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Fedora/20 () Chromium/40.0.2194.0 Chrome/40.0.2194.0 Safari/537.36');
+            it('os should be fedora', function() {
+                result.os.name.should.equal('fedora');
+            });
+            it('os version should be 20', function() {
+                result.os.version.should.equal('20');
+            });
+            it('os version name should be Heisenbug', function() {
+                result.os.versionName.should.equal('Heisenbug');
+            });
+            it('browser should be chrome', function() {
+                result.browser.name.should.equal('chrome');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 40.0.2194', function() {
+                result.browser.version.should.equal('40.0.2194');
+            });
+        });
+        describe('Chromium 27 on Fedora Linux Desktop', function(){
+            var result = S('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Fedora/18 (OGxyVI07puJEIltprVOx+nKUtFBW0X1nDLz6GIOU7TM=) Chromium/27.0.1453.93 Chrome/27.0.1453.93 Safari/535.2');
+            it('os should be fedora', function() {
+                result.os.name.should.equal('fedora');
+            });
+            it('os version should be 18', function() {
+                result.os.version.should.equal('18');
+            });
+            it('os version name should be Spherical Cow', function() {
+                result.os.versionName.should.equal('Spherical Cow');
+            });
+            it('browser should be chrome', function() {
+                result.browser.name.should.equal('chrome');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 27.0.1453', function() {
+                result.browser.version.should.equal('27.0.1453');
+            });
+        });
+    });
 });
 
 

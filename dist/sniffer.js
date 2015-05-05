@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 2.2.0 | https://github.com/wilddeer/Sniffer
+ * v. 2.3.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -305,6 +305,42 @@
                             }
                         }
                     },
+                    // Ubuntu
+                    {
+                        test: ['Ubuntu'],
+                        os: {
+                            fullName: 'Ubuntu',
+                            name: 'ubuntu'
+                        }
+                    },
+                    // Fedora
+                    {
+                        test: ['Fedora'],
+                        os: {
+                            fullName: 'Fedora',
+                            name: 'fedora',
+                            $version: {
+                                search: 'Fedora/',
+                                prop: 'majorVersion',
+                                names: {
+                                    '20': 'Heisenbug',
+                                    '19': 'Schrödinger\'s Cat',
+                                    '18': 'Spherical Cow',
+                                    '17': 'Beefy Miracle',
+                                    '16': 'Verne',
+                                    '15': 'Lovelock',
+                                    '14': 'Laughlin',
+                                    '13': 'Goddard',
+                                    '12': 'Constantine',
+                                    '11': 'Leonidas',
+                                    '10': 'Cambridge',
+                                    '9': 'Sulphur',
+                                    '8': 'Werewolf',
+                                    '7': 'Moonshine'
+                                }
+                            }
+                        }
+                    },
                     // Kindle
                     {
                         test: ['Kindle'],
@@ -478,7 +514,7 @@
         function init() {
             for (var i in data) {
                 test(data[i]);
-            };
+            }
         }
     
         function test(obj) {
