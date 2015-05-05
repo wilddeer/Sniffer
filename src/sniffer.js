@@ -301,7 +301,7 @@ var Sniffer = function(ua) {
                     test: ['Ubuntu'],
                     os: {
                         fullName: 'Ubuntu',
-                        name: 'ubuntu',
+                        name: 'ubuntu'
                     }
                 },
                 // Fedora
