@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 2.3.0 | https://github.com/wilddeer/Sniffer
+ * v. 2.4.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -51,6 +51,18 @@
                         },
                         features: {
                             mobile: true
+                        }
+                    },
+                    // Edge
+                    {
+                        test: ['Edge/'],
+                        browser: {
+                            fullName: 'Edge',
+                            name: 'edge',
+                            engine: 'edgehtml',
+                            $version: {
+                                search: 'Edge/'
+                            }
                         }
                     },
                     // IE
@@ -271,6 +283,7 @@
                             $version: {
                                 search: 'Windows NT ',
                                 names: {
+                                    '10.0': '10',
                                     '6.3': '8.1',
                                     '6.2': '8',
                                     '6.1': '7',
