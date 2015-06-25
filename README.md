@@ -103,6 +103,7 @@ Class names/shortcodes in square brackets.
 - **Chrome** *[chrome]*
 - **Firefox** *[firefox]*
 - **IE** *[ie]*
+- **Edge** *[edge]*
 - **Safari** *[safari]*
 - **Opera** *[opera]*
 - **Opera Mini** *[operamini]*
@@ -117,6 +118,7 @@ Class names/shortcodes in square brackets.
 - **Gecko** *[gecko]*
 - **Trident** *[trident]*
 - **Presto** *[presto]*
+- **EdgeHTML** *[edgehtml]*
 
 **OS/Devices:**
 
