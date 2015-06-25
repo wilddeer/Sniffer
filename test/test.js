@@ -296,6 +296,28 @@ describe('Desktop browsers', function(){
                 result.browser.version.should.equal('11.0');
             });
         });
+
+        describe('Edge on Windows 10 Preview', function(){
+            var result = S('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.9600');
+            it('os should be win', function() {
+                result.os.name.should.equal('win');
+            });
+            it('os version should be 10.0', function() {
+                result.os.version.should.equal('10.0');
+            });
+            it('os version name should be 10', function() {
+                result.os.versionName.should.equal('10');
+            });
+            it('browser should be edge', function() {
+                result.browser.name.should.equal('edge');
+            });
+            it('engine should be edgehtml', function() {
+                result.browser.engine.should.equal('edgehtml');
+            });
+            it('browser version should be 12.9600', function() {
+                result.browser.version.should.equal('12.9600');
+            });
+        });
     });
 
     describe('Mac OS X', function(){

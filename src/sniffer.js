@@ -44,6 +44,18 @@ var Sniffer = function(ua) {
                         mobile: true
                     }
                 },
+                // Edge
+                {
+                    test: ['Edge/'],
+                    browser: {
+                        fullName: 'Edge',
+                        name: 'edge',
+                        engine: 'edgehtml',
+                        $version: {
+                            search: 'Edge/'
+                        }
+                    }
+                },
                 // IE
                 {
                     test: ['MSIE'],
@@ -262,6 +274,7 @@ var Sniffer = function(ua) {
                         $version: {
                             search: 'Windows NT ',
                             names: {
+                                '10.0': '10',
                                 '6.3': '8.1',
                                 '6.2': '8',
                                 '6.1': '7',
