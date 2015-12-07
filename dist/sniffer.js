@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 2.4.0 | https://github.com/wilddeer/Sniffer
+ * v. 3.0.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -306,14 +306,14 @@
                             fullName: 'Mac OS X',
                             name: 'osx',
                             $version: {
-                                search: /OS X 10(_|\.)/,
-                                prop: 'majorVersion',
+                                search: /OS X /,
                                 names: {
-                                    '6': 'Snow Leopard',
-                                    '7': 'Lion',
-                                    '8': 'Mountain Lion',
-                                    '9': 'Mavericks',
-                                    '10': 'Yosemite'
+                                    '10.6': 'Snow Leopard',
+                                    '10.7': 'Lion',
+                                    '10.8': 'Mountain Lion',
+                                    '10.9': 'Mavericks',
+                                    '10.10': 'Yosemite',
+                                    '10.11': 'El Capitan'
                                 }
                             }
                         }
@@ -334,7 +334,6 @@
                             name: 'fedora',
                             $version: {
                                 search: 'Fedora/',
-                                prop: 'majorVersion',
                                 names: {
                                     '20': 'Heisenbug',
                                     '19': 'Schrödinger\'s Cat',
