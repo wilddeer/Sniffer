@@ -326,8 +326,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 6.8', function() {
-                result.os.version.should.equal('6.8');
+            it('os version should be 10.6.8', function() {
+                result.os.version.should.equal('10.6.8');
             });
             it('os version name should be Snow Leopard', function() {
                 result.os.versionName.should.equal('Snow Leopard');
@@ -348,8 +348,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 6', function() {
-                result.os.version.should.equal('6');
+            it('os version should be 10.6', function() {
+                result.os.version.should.equal('10.6');
             });
             it('os version name should be Snow Leopard', function() {
                 result.os.versionName.should.equal('Snow Leopard');
@@ -370,8 +370,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 6.8', function() {
-                result.os.version.should.equal('6.8');
+            it('os version should be 10.6.8', function() {
+                result.os.version.should.equal('10.6.8');
             });
             it('os version name should be Snow Leopard', function() {
                 result.os.versionName.should.equal('Snow Leopard');
@@ -392,8 +392,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 7.5', function() {
-                result.os.version.should.equal('7.5');
+            it('os version should be 10.7.5', function() {
+                result.os.version.should.equal('10.7.5');
             });
             it('os version name should be Lion', function() {
                 result.os.versionName.should.equal('Lion');
@@ -414,8 +414,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 8.5', function() {
-                result.os.version.should.equal('8.5');
+            it('os version should be 10.8.5', function() {
+                result.os.version.should.equal('10.8.5');
             });
             it('os version name should be Mountain Lion', function() {
                 result.os.versionName.should.equal('Mountain Lion');
@@ -436,8 +436,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 9.5', function() {
-                result.os.version.should.equal('9.5');
+            it('os version should be 10.9.5', function() {
+                result.os.version.should.equal('10.9.5');
             });
             it('os version name should be Mavericks', function() {
                 result.os.versionName.should.equal('Mavericks');
@@ -458,8 +458,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 10.1', function() {
-                result.os.version.should.equal('10.1');
+            it('os version should be 10.10.1', function() {
+                result.os.version.should.equal('10.10.1');
             });
             it('os version name should be Yosemite', function() {
                 result.os.versionName.should.equal('Yosemite');
@@ -480,8 +480,8 @@ describe('Desktop browsers', function(){
             it('os should be osx', function() {
                 result.os.name.should.equal('osx');
             });
-            it('os version should be 10', function() {
-                result.os.version.should.equal('10');
+            it('os version should be 10.10', function() {
+                result.os.version.should.equal('10.10');
             });
             it('os version name should be Yosemite', function() {
                 result.os.versionName.should.equal('Yosemite');
@@ -494,6 +494,28 @@ describe('Desktop browsers', function(){
             });
             it('browser version should be 34.0', function() {
                 result.browser.version.should.equal('34.0');
+            });
+        });
+
+        describe('Safari 9 on El Capitan', function(){
+            var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56');
+            it('os should be osx', function() {
+                result.os.name.should.equal('osx');
+            });
+            it('os version should be 10.11', function() {
+                result.os.version.should.equal('10.11');
+            });
+            it('os version name should be El Capitan', function() {
+                result.os.versionName.should.equal('El Capitan');
+            });
+            it('browser should be safari', function() {
+                result.browser.name.should.equal('safari');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 9.0', function() {
+                result.browser.version.should.equal('9.0');
             });
         });
     });
