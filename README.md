@@ -133,6 +133,7 @@ Class names/shortcodes in square brackets.
 - **Sailfish OS** *[sailfish]*
 - **Symbian** *[symbian]*
 - **Kindle** *[kindle]* (Kindle Fire should be detected as Android)
+- **PlayStation** *[playstation]*
 - **PlayStation Vita** *[psvita]*
 - **Nintendo DSi** *[dsi]*
 - **Nintendo 3DS** *[3ds]*
