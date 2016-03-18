@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 3.0.0 | https://github.com/wilddeer/Sniffer
+ * v. 3.1.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -413,6 +413,20 @@
                         },
                         features: {
                             mobile: true
+                        }
+                    },
+                    // PlayStation
+                    {
+                        test: [/playstation/i],
+                        os: {
+                            fullName: 'PlayStation',
+                            name: 'playstation',
+                            $version: {
+                                search: /playstation\s/i
+                            }
+                        },
+                        features: {
+                            tv: true
                         }
                     },
                     // Nintendo DSi
