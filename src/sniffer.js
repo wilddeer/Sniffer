@@ -406,6 +406,20 @@ var Sniffer = function(ua) {
                         mobile: true
                     }
                 },
+                // PlayStation
+                {
+                    test: [/playstation/i],
+                    os: {
+                        fullName: 'PlayStation',
+                        name: 'playstation',
+                        $version: {
+                            search: /playstation\s/i
+                        }
+                    },
+                    features: {
+                        tv: true
+                    }
+                },
                 // Nintendo DSi
                 {
                     test: ['Nintendo DSi'],

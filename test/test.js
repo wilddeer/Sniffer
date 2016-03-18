@@ -979,6 +979,25 @@ describe('Devices', function(){
         });
     });
 
+    describe('PlayStation 4', function(){
+        var result = S('Mozilla/5.0 (PlayStation 4 3.15) AppleWebKit/537.73 (KHTML, like Gecko)');
+        it('os should be playstation', function() {
+            result.os.name.should.equal('playstation');
+        });
+        it('os version should be 4', function() {
+            result.os.version.should.equal('4');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be not ok', function() {
+            result.browser.version.should.be.not.ok;
+        });
+        it('should be tv', function() {
+            result.features.tv.should.be.true;
+        });
+    });
+
     describe('PlayStation Vita', function(){
         var result = S('Mozilla/5.0 (PlayStation Vita 3.01) AppleWebKit/536.26 (KHTML, like Gecko) Silk/3.2');
         it('os should be psvita', function() {
