@@ -1,4 +1,6 @@
 var Sniffer = function(ua) {
+    'use strict';
+
     var sniff = {
             browser: {
                 fullName: '',
