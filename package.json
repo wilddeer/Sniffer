@@ -29,5 +29,6 @@
   },
   "scripts": {
     "test": "mocha"
-  }
+  },
+  "main": "dist/sniffer.module.js"
 }
