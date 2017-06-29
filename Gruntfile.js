@@ -40,13 +40,13 @@ module.exports = function(grunt) {
                 src: [
                     'dist/sniffer.module.js'
                 ],
-                dest: ''
+                dest: 'dist/sniffer.module.js'
             },
             'default': {
                 src: [
                     'dist/sniffer.js'
                 ],
-                dest: ''
+                dest: 'dist/sniffer.js'
             }
         },
 
