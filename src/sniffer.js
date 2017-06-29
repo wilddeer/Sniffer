@@ -614,13 +614,12 @@ var Sniffer = function(ua) {
             searchString = search;
         }
 
-        var index = ua.indexOf(searchString),
-            substring;
+        var index = ua.indexOf(searchString);
 
         if (index == -1) return;
 
-        substring = ua.substring(index+searchString.length);
-        regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
+        var substring = ua.substring(index+searchString.length);
+        var regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
 
         if (!regexpResult) return;
 
