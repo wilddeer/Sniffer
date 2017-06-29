@@ -1,11 +1,13 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 3.1.0 | https://github.com/wilddeer/Sniffer
+ * v. 3.1.1 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
  */
 var Sniffer = function(ua) {
+    'use strict';
+
     var sniff = {
             browser: {
                 fullName: '',
@@ -621,13 +623,12 @@ var Sniffer = function(ua) {
             searchString = search;
         }
 
-        var index = ua.indexOf(searchString),
-            substring;
+        var index = ua.indexOf(searchString);
 
         if (index == -1) return;
 
-        substring = ua.substring(index+searchString.length);
-        regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
+        var substring = ua.substring(index+searchString.length);
+        var regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
 
         if (!regexpResult) return;
 
