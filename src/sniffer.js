@@ -94,6 +94,30 @@ var Sniffer = function(ua) {
                         }
                     }
                 },
+                // UC Browser
+                {
+                    test: ['UCBrowser'],
+                    browser: {
+                        fullName: 'UC Browser',
+                        name: 'ucbrowser',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'UCBrowser/'
+                        }
+                    }
+                },
+                // Yandex Browser
+                {
+                    test: ['YaBrowser'],
+                    browser: {
+                        fullName: 'Yandex Browser',
+                        name: 'yabrowser',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'YaBrowser/'
+                        }
+                    }
+                },
                 // Chrome
                 {
                     test: ['Chrome'],
