@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 3.1.1 | https://github.com/wilddeer/Sniffer
+ * v. 3.2.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -102,6 +102,30 @@
                             engine: 'webkit',
                             $version: {
                                 search: 'OPR/'
+                            }
+                        }
+                    },
+                    // UC Browser
+                    {
+                        test: ['UCBrowser'],
+                        browser: {
+                            fullName: 'UC Browser',
+                            name: 'ucbrowser',
+                            engine: 'webkit',
+                            $version: {
+                                search: 'UCBrowser/'
+                            }
+                        }
+                    },
+                    // Yandex Browser
+                    {
+                        test: ['YaBrowser'],
+                        browser: {
+                            fullName: 'Yandex Browser',
+                            name: 'yabrowser',
+                            engine: 'webkit',
+                            $version: {
+                                search: 'YaBrowser/'
                             }
                         }
                     },
