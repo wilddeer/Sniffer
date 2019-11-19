@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 3.2.1 | https://github.com/wilddeer/Sniffer
+ * v. 3.3.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -341,7 +341,11 @@
                                     '10.8': 'Mountain Lion',
                                     '10.9': 'Mavericks',
                                     '10.10': 'Yosemite',
-                                    '10.11': 'El Capitan'
+                                    '10.11': 'El Capitan',
+                                    '10.12': 'Sierra',
+                                    '10.13': 'High Sierra',
+                                    '10.14': 'Mojave',
+                                    '10.15': 'Catalina'
                                 }
                             }
                         }
