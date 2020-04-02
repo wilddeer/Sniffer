@@ -129,6 +129,42 @@
                             }
                         }
                     },
+                    // Avast Secure Browser
+                    {
+                        test: ['Avast'],
+                        browser: {
+                            fullName: 'Avast Secure Browser',
+                            name: 'avast',
+                            engine: 'webkit',
+                            $version: {
+                                search: 'Avast/'
+                            }
+                        }
+                    },
+                    // AVG Secure Browser
+                    {
+                        test: ['AVG'],
+                        browser: {
+                            fullName: 'AVG Secure Browser',
+                            name: 'avg',
+                            engine: 'webkit',
+                            $version: {
+                                search: 'AVG/'
+                            }
+                        }
+                    },
+                    // CCleaner Browser
+                    {
+                        test: ['CCleaner'],
+                        browser: {
+                            fullName: 'CCleaner Browser',
+                            name: 'ccleaner',
+                            engine: 'webkit',
+                            $version: {
+                                search: 'CCleaner/'
+                            }
+                        }
+                    },
                     // Chrome
                     {
                         test: ['Chrome'],

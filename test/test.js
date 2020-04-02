@@ -319,7 +319,7 @@ describe('Desktop browsers', function(){
             });
         });
 
-        describe('YaBrowser on Window 8.1', function() {
+        describe('YaBrowser on Windows 8.1', function() {
             var result = S('Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.1.749 Yowser/2.5 Safari/537.36');
             it('os should be win', function() {
                 result.os.name.should.equal('win');
@@ -338,6 +338,70 @@ describe('Desktop browsers', function(){
             });
             it('browser version should be 17.6.1', function() {
                 result.browser.version.should.equal('17.6.1');
+            });
+        });
+
+        describe('Avast Secure Browser 80 on Windows 10', function(){
+            var result = S('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 Avast/80.0.3765.150');
+            it('os should be win', function() {
+                result.os.name.should.equal('win');
+            });
+            it('os version should be 10.0', function() {
+                result.os.version.should.equal('10.0');
+            });
+            it('os version name should be 10', function() {
+                result.os.versionName.should.equal('10');
+            });
+            it('browser should be avast', function() {
+                result.browser.name.should.equal('avast');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 80.0.3765', function() {
+                result.browser.version.should.equal('80.0.3765');
+            });
+        });
+        describe('AVG Secure Browser 80 on Windows 10', function(){
+            var result = S('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 AVG/80.0.3765.151');
+            it('os should be win', function() {
+                result.os.name.should.equal('win');
+            });
+            it('os version should be 10.0', function() {
+                result.os.version.should.equal('10.0');
+            });
+            it('os version name should be 10', function() {
+                result.os.versionName.should.equal('10');
+            });
+            it('browser should be avg', function() {
+                result.browser.name.should.equal('avg');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 80.0.3765', function() {
+                result.browser.version.should.equal('80.0.3765');
+            });
+        });
+        describe('CCleaner Browser 80 on Windows 10', function(){
+            var result = S('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 CCleaner/80.0.3765.152');
+            it('os should be win', function() {
+                result.os.name.should.equal('win');
+            });
+            it('os version should be 10.0', function() {
+                result.os.version.should.equal('10.0');
+            });
+            it('os version name should be 10', function() {
+                result.os.versionName.should.equal('10');
+            });
+            it('browser should be ccleaner', function() {
+                result.browser.name.should.equal('ccleaner');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 80.0.3765', function() {
+                result.browser.version.should.equal('80.0.3765');
             });
         });
     });
