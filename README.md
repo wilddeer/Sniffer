@@ -111,6 +111,11 @@ Class names/shortcodes in square brackets.
 - **Nokia Browser** *[nokiabrowser]* (!= Nokia Xpress) — Symbian Belle phones
 - **Ovi Browser** a.k.a **Nokia Xpress** *[ovi]* — Nokia Asha, Series40 &amp; Series60 phones, etc.
 - **Sailfish Browser** *[sailfishbrowser]*
+- **UC Browser** *[ucbrowser]*
+- **Yandex Browser** *[yabrowser]*
+- **Avast Secure Browser** *[avast]*
+- **AVG Secure Browser** *[avg]*
+- **CCleaner Browser** *[ccleaner]*
 
 **Engines:**
 
