@@ -319,6 +319,28 @@ describe('Desktop browsers', function(){
             });
         });
 
+        describe('Edge Chromium on Windows 10', function(){
+            var result = S('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.57');
+            it('os should be win', function() {
+                result.os.name.should.equal('win');
+            });
+            it('os version should be 10.0', function() {
+                result.os.version.should.equal('10.0');
+            });
+            it('os version name should be 10', function() {
+                result.os.versionName.should.equal('10');
+            });
+            it('browser should be edge', function() {
+                result.browser.name.should.equal('edge');
+            });
+            it('engine should be webkit', function() {
+                result.browser.engine.should.equal('webkit');
+            });
+            it('browser version should be 87.0.664', function() {
+                result.browser.version.should.equal('87.0.664');
+            });
+        });
+
         describe('YaBrowser on Window 8.1', function() {
             var result = S('Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.1.749 Yowser/2.5 Safari/537.36');
             it('os should be win', function() {

@@ -58,6 +58,18 @@ var Sniffer = function(ua) {
                         }
                     }
                 },
+                // Edge Chromium
+                {
+                    test: ['Edg/'],
+                    browser: {
+                        fullName: 'Edge',
+                        name: 'edge',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'Edg/'
+                        }
+                    }
+                },
                 // IE
                 {
                     test: ['MSIE'],
