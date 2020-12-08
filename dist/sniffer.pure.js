@@ -1,11 +1,13 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 3.1.0 | https://github.com/wilddeer/Sniffer
+ * v. 4.0.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
  */
 var Sniffer = function(ua) {
+    'use strict';
+
     var sniff = {
             browser: {
                 fullName: '',
@@ -63,6 +65,18 @@ var Sniffer = function(ua) {
                         }
                     }
                 },
+                // Edge Chromium
+                {
+                    test: ['Edg/'],
+                    browser: {
+                        fullName: 'Edge',
+                        name: 'edge',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'Edg/'
+                        }
+                    }
+                },
                 // IE
                 {
                     test: ['MSIE'],
@@ -96,6 +110,30 @@ var Sniffer = function(ua) {
                         engine: 'webkit',
                         $version: {
                             search: 'OPR/'
+                        }
+                    }
+                },
+                // UC Browser
+                {
+                    test: ['UCBrowser'],
+                    browser: {
+                        fullName: 'UC Browser',
+                        name: 'ucbrowser',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'UCBrowser/'
+                        }
+                    }
+                },
+                // Yandex Browser
+                {
+                    test: ['YaBrowser'],
+                    browser: {
+                        fullName: 'Yandex Browser',
+                        name: 'yabrowser',
+                        engine: 'webkit',
+                        $version: {
+                            search: 'YaBrowser/'
                         }
                     }
                 },
@@ -311,7 +349,11 @@ var Sniffer = function(ua) {
                                 '10.8': 'Mountain Lion',
                                 '10.9': 'Mavericks',
                                 '10.10': 'Yosemite',
-                                '10.11': 'El Capitan'
+                                '10.11': 'El Capitan',
+                                '10.12': 'Sierra',
+                                '10.13': 'High Sierra',
+                                '10.14': 'Mojave',
+                                '10.15': 'Catalina'
                             }
                         }
                     }
@@ -621,13 +663,12 @@ var Sniffer = function(ua) {
             searchString = search;
         }
 
-        var index = ua.indexOf(searchString),
-            substring;
+        var index = ua.indexOf(searchString);
 
         if (index == -1) return;
 
-        substring = ua.substring(index+searchString.length);
-        regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
+        var substring = ua.substring(index+searchString.length);
+        var regexpResult = /^(\d+(\.|_)){0,2}\d+/.exec(substring);
 
         if (!regexpResult) return;
 

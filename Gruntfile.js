@@ -33,20 +33,20 @@ module.exports = function(grunt) {
 
         wrap: {
             options: {
-                wrapper: ['<%= banner %>\n;(function(global) {', '})(this);'],
+                wrapper: ['<%= banner %>\n;(function(global) {\n\'use strict\';\n', '})(this);'],
                 indent: '    '
             },
             'module': {
                 src: [
                     'dist/sniffer.module.js'
                 ],
-                dest: ''
+                dest: 'dist/sniffer.module.js'
             },
             'default': {
                 src: [
                     'dist/sniffer.js'
                 ],
-                dest: ''
+                dest: 'dist/sniffer.js'
             }
         },
 
