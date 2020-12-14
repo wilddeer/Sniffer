@@ -332,7 +332,7 @@ var Sniffer = function(ua) {
                 {
                     test: ['Macintosh', 'OS X'],
                     os: {
-                        fullName: 'Mac OS X',
+                        fullName: 'macOS',
                         name: 'osx',
                         $version: {
                             search: /OS X /,
