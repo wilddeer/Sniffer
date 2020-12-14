@@ -1,6 +1,6 @@
 /*!
  * Sniffer is a clientside browser/engine/os/device detection tool
- * v. 4.0.0 | https://github.com/wilddeer/Sniffer
+ * v. 4.1.0 | https://github.com/wilddeer/Sniffer
  * Copyright Oleg Korsunsky | http://wd.dizaina.net/
  *
  * MIT License
@@ -337,9 +337,9 @@ var Sniffer = function(ua) {
                 },
                 // Mac OS X
                 {
-                    test: ['Macintosh', 'OS X 10'],
+                    test: ['Macintosh', 'OS X'],
                     os: {
-                        fullName: 'Mac OS X',
+                        fullName: 'macOS',
                         name: 'osx',
                         $version: {
                             search: /OS X /,
@@ -353,7 +353,8 @@ var Sniffer = function(ua) {
                                 '10.12': 'Sierra',
                                 '10.13': 'High Sierra',
                                 '10.14': 'Mojave',
-                                '10.15': 'Catalina'
+                                '10.15': 'Catalina',
+                                '11.0': 'Big Sur'
                             }
                         }
                     }
