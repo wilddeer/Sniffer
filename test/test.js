@@ -1282,6 +1282,28 @@ describe('Devices', function(){
         });
     });
 
+    describe('Chrome on Big Sur', function(){
+        var result = S('Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36');
+        it('os should be osx', function() {
+            result.os.name.should.equal('osx');
+        });
+        it('os version should be 11.0.1', function() {
+            result.os.version.should.equal('11.0.1');
+        });
+        it('os version name should be Big Sur', function() {
+            result.os.versionName.should.equal('Big Sur');
+        });
+        it('browser should be chrome', function() {
+            result.browser.name.should.equal('chrome');
+        });
+        it('engine should be webkit', function() {
+            result.browser.engine.should.equal('webkit');
+        });
+        it('browser version should be 87.0.4280', function() {
+            result.browser.version.should.equal('87.0.4280');
+        });
+    });
+
     describe('UC Browser on Android 6.0.1', function(){
         var result = S('Mozilla/5.0 (Linux; U; Android 6.0.1; zh-CN; F5121 Build/34.0.A.1.247) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 UCBrowser/11.5.1.944 Mobile Safari/537.36');
         it('os should be android', function() {
